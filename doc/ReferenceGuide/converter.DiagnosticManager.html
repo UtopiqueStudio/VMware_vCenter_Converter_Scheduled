@@ -1,0 +1,567 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.DiagnosticManager" name="converter.DiagnosticManager"></a>
+<h1>Managed Object -  
+						ConverterDiagnosticManager</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.agent.helper.ServiceInstanceContent.html#field_detail">ConverterHelperServiceContent</a>, <a href="converter.ServiceInstanceContent.html#field_detail">ConverterServiceContent</a>
+</dd>
+<dt>Extended by</dt>
+<dd>
+<a href="converter.server.ServerDiagnosticManager.html">ConverterServerDiagnosticManager</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.ComputerSpec.html">ConverterComputerSpec</a>, <a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a>, <a href="converter.task.Task.html">ConverterTask</a>
+</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         Provides an interface to get server and task related diagnostic bundles
+ containing low-level debugging logs. For conversion tasks this includes
+ the converter Agent logs as well as the related server logs.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r0">
+<td colspan="3">None</td>
+</tr>
+</table>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#deleteTaskLogBundle">ConverterDeleteTaskLogBundle</a>, <a href="#generateLogBundle">ConverterGenerateLogBundle</a>, <a href="#generateTaskLogBundle">ConverterGenerateTaskLogBundle</a>, <a href="#retrieveTaskLogBundle">ConverterRetrieveTaskLogBundle</a>, <a href="#retrieveTaskLogBundleUrl">ConverterRetrieveTaskLogBundleUrl</a></td>
+</tr>
+</table>
+<br>
+<a id="deleteTaskLogBundle" name="deleteTaskLogBundle"></a>
+<h1>ConverterDeleteTaskLogBundle</h1>
+<p></p>
+         Instructs the server that this diagnostic bundle is no longer needed
+ by the client that generated it. The server can then safely delete
+ the file either immediately or after a delay. Calling this function
+ after each call to generateTaskLogBundle will help the server work
+ more efficiently.
+ <p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>key</strong></td><td>xsd:string</td><td>
+<p></p>
+         The TaskLogBundleInfo key parameter returned by
+            a call to generateTaskLogBundle.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.CannotDeleteFile.html">CannotDeleteFile</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td>Thrown if the TaskLogBundleInfo key was not found.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="generateLogBundle" name="generateLogBundle"></a>
+<h1>ConverterGenerateLogBundle</h1>
+<p></p>
+         Instructs the server to generate diagnostic bundle not associated with
+ a particular task. A diagnostic bundle includes log files and other
+ configuration information that can be used to investigate failures.
+ <p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies ComputerSpec object of the source for which
+               to generate the diagnostic bundle.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a></td><td>A TaskLogBundleInfo object for the diagnostic bundle that has been generated.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.LogBundlingFailed.html">LogBundlingFailed</a></td><td>Thrown if generation of support bundle failed. <p> The caller can download the bundle using an HTTP GET operation for the URL returned by retrieveTaskLogBundleUrl or alternatively the bundle can be retrieved with calls to retrieveTaskLogBundle. Bundles are usually available for at least 24 hours, but the caller should not assume that the returned URLs are valid indefinitely. Servers often automatically delete generated diagnostic bundles after some given period of time.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="generateTaskLogBundle" name="generateTaskLogBundle"></a>
+<h1>ConverterGenerateTaskLogBundle</h1>
+<p></p>
+         Instructs the server to generate diagnostic bundle for the specified
+ task. A diagnostic bundle includes log files and other configuration
+ information that can be used to investigate failures.
+ <p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>task</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.task.Task.html">ConverterTask</a></td><td>
+<p></p>
+         Specifies the Task object for which to generate
+             the diagnostic bundle. If this parameter is not
+             specified then only the server diagnostic logs
+             are added to the bundle.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a></td><td>A TaskLogBundleInfo object for the diagnostic bundle that has been generated.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td>Thrown if the Task is still running.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.LogBundlingFailed.html">LogBundlingFailed</a></td><td>Thrown if generation of support bundle failed. <p> The caller can download the bundle using an HTTP GET operation for the URL returned by retrieveTaskLogBundleUrl or alternatively the bundle can be retrieved with calls to retrieveTaskLogBundle. Bundles are usually available for at least 24 hours, but the caller should not assume that the returned URLs are valid indefinitely. Servers often automatically delete generated diagnostic bundles after some given period of time.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user has no permission to access the diagnostic logs for this task.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td>Thrown if the Task was not found on the server.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="retrieveTaskLogBundle" name="retrieveTaskLogBundle"></a>
+<h1>ConverterRetrieveTaskLogBundle</h1>
+<p></p>
+         Retrieves the diagnostic bundle using Base64 encoding. This method
+ is useful when the server does not support HTTP GET requests. The
+ bundle is downloaded in chunks that the client is supposed to assemble
+ into a single file. The CRC checksum in TaskLogBundleInfo can be used
+ to verify that the retrieved file is correctly assembled.
+ <p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>key</strong></td><td>xsd:string</td><td>
+<p></p>
+         The TaskLogBundleInfo key parameter returned by
+            a call to generateTaskLogBundle.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>offset</strong></td><td>xsd:long</td><td>
+<p></p>
+         Byte offset into the bundle file to the start of
+               the chunk that is to be returned.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>maxPageSize</strong></td><td>xsd:long</td><td>
+<p></p>
+         Maximum size in bytes of the chunk to be returned.
+                    This parameter can be used to control the size and
+                    number of chunks with which to retrieve a bundle.
+                    The maximum page size can also be limited internally
+                    by the server so the size of the returned chunk may
+                    be smaller than maxPageSize even if the bundle file
+                    contains more bytes.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:string</td><td>A Base64 encoded string containing the requested chunk of the bundle file. Its length may be less than the maxPageSize.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td>Thrown if the TaskLogBundleInfo key was not found.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="retrieveTaskLogBundleUrl" name="retrieveTaskLogBundleUrl"></a>
+<h1>ConverterRetrieveTaskLogBundleUrl</h1>
+<p></p>
+         Returns the location from which the diagnostic bundle can be downloaded.
+ The host part of the URL is returned as '*' if the host name to be
+ used is the name of the server to which the call was made. For example,
+ if the call is made to vcsrv1.domain1.com, and the bundle is available
+ for download from http://vcsrv1.domain1.com/diagnostics/bundle.zip, the
+ URL returned may be http:// * /diagnostics/bundle.zip (without spaces).
+ The client replaces the asterisk with the server name on which it
+ invoked the call.
+ <p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>key</strong></td><td>xsd:string</td><td>
+<p></p>
+         The TaskLogBundleInfo key parameter returned by
+            a call to generateTaskLogBundle.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:string</td><td>A URL for the location of the diagnostic bundle.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td>Thrown if the server does not support HTTP GET. <p> The caller can download the bundle using an HTTP GET operation for the returned URL. Bundles are usually available for at least 24 hours, but the caller should not assume that the returned URLs are valid indefinitely. Servers often automatically delete generated diagnostic bundles after some given period of time.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td>Thrown if the TaskLogBundleInfo key was not found.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

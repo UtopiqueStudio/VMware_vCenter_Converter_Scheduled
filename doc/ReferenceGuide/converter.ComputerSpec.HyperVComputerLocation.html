@@ -1,0 +1,152 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.ComputerSpec.HyperVComputerLocation" name="converter.ComputerSpec.HyperVComputerLocation"></a>
+<h1>Data Object - ConverterComputerSpecHyperVComputerLocation</h1>
+<dl>
+<dt>Extends</dt>
+<dd>
+<a href="converter.ComputerSpec.ComputerLocation.html">ConverterComputerSpecComputerLocation</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+<p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="hostname" name="hostname"></a><strong>hostname</strong></td><td>xsd:string</td><td>
+<p></p>
+         NetBIOS name, DNS name, or IP address
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="password" name="password"></a><strong>password</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         Password for the user specified by <a href="converter.ComputerSpec.HyperVComputerLocation.html#username">username</a>.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="port" name="port"></a><strong>port</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         TCP port number of Converter Agent running on the computer.
+ <p>
+ Port 443 is used by default, if applicable. The connection is always
+ established over SSL.
+ <p>
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="sslThumbprint" name="sslThumbprint"></a><strong>sslThumbprint</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The thumbprint of the SSL certificate, which the host is
+  expected to have.  If this value is set and matches the
+  certificate thumbprint presented by the host, then the host is
+  authenticated. If this value is not set or does not match the
+  certificate thumbprint presented by the host, then the host's
+  certificate is verified by checking whether it was signed by a
+  recognized CA.
+  <p>
+  The thumbprint is always computed using the SHA1 hash and is
+  the string representation of that hash in the format:
+  xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx
+  where, 'x' represents a hexadecimal digit
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="username" name="username"></a><strong>username</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         User with root/Administrator privileges.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="verifyPeer" name="verifyPeer"></a><strong>verifyPeer</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td><B>Deprecated.</B><I>
+         As of Converter API version 4. Remote peer certificate is always verified.
+      </I>
+<p></p>
+         Specifies whether peer's certificate should be verified. False by default.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="vmGUID" name="vmGUID"></a><strong>vmGUID</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The GUID of the VM in HyperV Server's "ComputerSystem"
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="vmName" name="vmName"></a><strong>vmName</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         Name of the Hyper-V VM being referred
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="converter.ComputerSpec.ComputerLocation.html">ConverterComputerSpecComputerLocation</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3">None</td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

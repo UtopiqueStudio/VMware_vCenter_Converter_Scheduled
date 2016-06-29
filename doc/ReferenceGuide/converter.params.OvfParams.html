@@ -1,0 +1,150 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.params.OvfParams" name="converter.params.OvfParams"></a>
+<h1>Data Object - ConverterOvfParams</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.params.CloningParams.html#field_detail">ConverterCloningParams</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.ovf.OvfCpuCompatibility.html">ConverterOvfOvfCpuCompatibility</a>, <a href="converter.ovf.OvfLicense.html">ConverterOvfOvfLicense</a>, <a href="converter.ovf.OvfNetwork.html">ConverterOvfOvfNetwork</a>, <a href="converter.ovf.OvfOperatingSystemSection.html">ConverterOvfOvfOperatingSystemSection</a>, <a href="converter.ovf.OvfProduct.html">ConverterOvfOvfProduct</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<B>Deprecated.</B><I>
+         as of version 3 of Converter API.
+ Support for OVF import/export has been dropped.
+
+ OvfParams encapsulates Ovf information that is sent from GUI
+ to backend during OVF export.
+      </I>
+<p></p>
+<p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="certificateFile" name="certificateFile"></a><strong>certificateFile</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Will the target virtual appliance be signed and
+ packaged with a certificate file
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="manifestFile" name="manifestFile"></a><strong>manifestFile</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Will the target virtual appliance contain
+ a manifest file
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="ova" name="ova"></a><strong>ova</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Will the target be packaged as OVA
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="ovfAnnotationSection" name="ovfAnnotationSection"></a><strong>ovfAnnotationSection</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         Annotation for the target OVF
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="ovfCpuCompatibilitySection" name="ovfCpuCompatibilitySection"></a><strong>ovfCpuCompatibilitySection</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ovf.OvfCpuCompatibility.html">ConverterOvfOvfCpuCompatibility[]</a></td><td>
+<p></p>
+         CpuCompatibility information for the target OVF
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="ovfEulaSection" name="ovfEulaSection"></a><strong>ovfEulaSection</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ovf.OvfLicense.html">ConverterOvfOvfLicense[]</a></td><td>
+<p></p>
+         Eulas to be included in the target OVF
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="ovfNetworkSection" name="ovfNetworkSection"></a><strong>ovfNetworkSection</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ovf.OvfNetwork.html">ConverterOvfOvfNetwork[]</a></td><td>
+<p></p>
+         Networks to be included in target OVF
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="ovfOperatingSystemSection" name="ovfOperatingSystemSection"></a><strong>ovfOperatingSystemSection</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ovf.OvfOperatingSystemSection.html">ConverterOvfOvfOperatingSystemSection</a></td><td>
+<p></p>
+         Operating system details of the target OVF
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="ovfProductSection" name="ovfProductSection"></a><strong>ovfProductSection</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ovf.OvfProduct.html">ConverterOvfOvfProduct</a></td><td>
+<p></p>
+         Product details of the target virtual appliance
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

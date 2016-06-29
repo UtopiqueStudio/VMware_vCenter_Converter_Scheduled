@@ -1,0 +1,203 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.server.ServerDiagnosticManager" name="converter.server.ServerDiagnosticManager"></a>
+<h1>Managed Object -  
+						ConverterServerDiagnosticManager</h1>
+<dl>
+<dt>Extends</dt>
+<dd>
+<a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a>, <a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+</dd>
+<dt>Since </dt>
+<dd>Converter API 5.0</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         Provides an interface to get job related diagnostic bundles containing
+ low-level debugging logs. For conversion jobs this includes the task
+ log bundles for all tasks associated with the job as well as the related
+ server logs.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r0">
+<td colspan="3">None</td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3">None</td>
+</tr>
+</table>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#generateJobLogBundle">ConverterGenerateJobLogBundle</a></td>
+</tr>
+<tr class="r1">
+<td>
+            Methods inherited from <a href="converter.DiagnosticManager.html">ConverterDiagnosticManager</a></td>
+</tr>
+<tr class="r0">
+<td><a href="converter.DiagnosticManager.html#deleteTaskLogBundle">ConverterDeleteTaskLogBundle</a>, <a href="converter.DiagnosticManager.html#generateLogBundle">ConverterGenerateLogBundle</a>, <a href="converter.DiagnosticManager.html#generateTaskLogBundle">ConverterGenerateTaskLogBundle</a>, <a href="converter.DiagnosticManager.html#retrieveTaskLogBundle">ConverterRetrieveTaskLogBundle</a>, <a href="converter.DiagnosticManager.html#retrieveTaskLogBundleUrl">ConverterRetrieveTaskLogBundleUrl</a></td>
+</tr>
+</table>
+<br>
+<a id="generateJobLogBundle" name="generateJobLogBundle"></a>
+<h1>ConverterGenerateJobLogBundle</h1>
+<p></p>
+         Instructs the server to generate diagnostic bundle for the specified
+ job. A diagnostic bundle includes log files and other configuration
+ information that can be used to investigate failures.
+ <p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.ServerDiagnosticManager.html">ConverterServerDiagnosticManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>job</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.job.Job.html">ConverterServerJobJob</a></td><td>
+<p></p>
+         Specifies the Job object for which to generate
+            the diagnostic bundle. It will include the diagnostic
+            bundles for all tasks associated with that job if
+            present.
+            If this parameter is not specified then only the server
+            diagnostic logs are added to the bundle.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a></td><td>A TaskLogBundleInfo object for the diagnostic bundle that has been generated.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td>Thrown if the Task is still running.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.LogBundlingFailed.html">LogBundlingFailed</a></td><td>Thrown if generation of support bundle failed. <p> The caller can download the bundle using an HTTP GET operation for the URL returned by retrieveTaskLogBundleUrl or alternatively the bundle can be retrieved with calls to retrieveTaskLogBundle. Bundles are usually available for at least 24 hours, but the caller should not assume that the returned URLs are valid indefinitely. Servers often automatically delete generated diagnostic bundles after some given period of time.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user has no permission to access the diagnostic logs for this task.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td>Thrown if the Task was not found on the server.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

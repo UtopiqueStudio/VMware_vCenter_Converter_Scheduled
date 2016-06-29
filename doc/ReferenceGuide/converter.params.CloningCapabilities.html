@@ -1,0 +1,308 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.params.CloningCapabilities" name="converter.params.CloningCapabilities"></a>
+<h1>Data Object - ConverterCloningCapabilities</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.params.DefaultConversionParams.html#field_detail">ConverterDefaultConversionParams</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         Specifies various options that can be used to populate
+ <a href="converter.params.CloningParams.html">ConverterCloningParams</a>
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="canCreateOptimizedPartitionAlignment" name="canCreateOptimizedPartitionAlignment"></a><strong>canCreateOptimizedPartitionAlignment</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether "Optimized partition alignment" is
+ supported for the current source and destination.
+ <p>
+ The default value will be stored in
+ conversionParams.cloningParams.storageParams.optimizedPartitionAlignment.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="canPowerOffSourceMachine" name="canPowerOffSourceMachine"></a><strong>canPowerOffSourceMachine</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether <a href="converter.task.TaskSpec.html#shutdownSource">shutdownSource</a>
+ is supported for the current source and destination.
+ <p>
+ Note: if unset the feature will not be supported.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="canPowerOnTargetMachine" name="canPowerOnTargetMachine"></a><strong>canPowerOnTargetMachine</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether
+ <a href="converter.params.ConversionParams.html#powerOnTargetVM">powerOnTargetVm</a>
+ is supported for the current source and destination.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="canScheduleSynchronization" name="canScheduleSynchronization"></a><strong>canScheduleSynchronization</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether
+ <a href="converter.server.conversion.ConversionJobSpec.html#synchronizationStartTime">synchronizationStartTime</a>
+ is supported for the current source and destination.
+ <p>
+ Note: if unset the feature will not be supported.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="canSkipUnwantedFiles" name="canSkipUnwantedFiles"></a><strong>canSkipUnwantedFiles</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether "Can skip unwanted files" is
+ supported for the current source and destination.
+ <p>
+ The default value will be stored in
+ conversionParams.cloningParams.storageParams.skipUnwantedFiles.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="canStopServices" name="canStopServices"></a><strong>canStopServices</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether stopping services
+ (<a href="converter.params.CloningParams.html#servicesToSuspend">servicesToSuspend</a>)
+ is supported for the current source.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="canSynchronize" name="canSynchronize"></a><strong>canSynchronize</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Specifies whether
+ <a href="converter.params.ConversionParams.html#doSynchronize">doSynchronize</a>
+ is supported for the current source and destination.
+ <p>
+ Note: if unset the feature will not be supported.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="defaultCdromControllerType" name="defaultCdromControllerType"></a><strong>defaultCdromControllerType</strong></td><td>xsd:string</td><td>
+<p></p>
+         The default controller type for CD-ROM controllers.
+ <p>
+ This value is always from the
+ <a href="converter.params.StorageParams.DiskControllerType.html">DiskControllerType</a> enum
+ but not keepSource.
+      <p></p>
+<B><I>Since </I></B>Converter API 5.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="defaultDiskCreateType" name="defaultDiskCreateType"></a><strong>defaultDiskCreateType</strong></td><td>xsd:string</td><td>
+<p></p>
+         The default disk creation type.
+ Always from the
+ <a href="converter.params.StorageParams.DiskCreateType.html">DiskCreateType</a> enum.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="defaultMemoryMB" name="defaultMemoryMB"></a><strong>defaultMemoryMB</strong></td><td>xsd:long</td><td>
+<p></p>
+         The default memory size in MB supported by the host. This field is NOT
+ capped by the values stored in
+ <a href="converter.params.CloningCapabilities.html#supportedMinMemMB">supportedMinMemMB</a>/
+ <a href="converter.params.CloningCapabilities.html#supportedMaxMemMB">supportedMaxMemMB</a>.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="defaultNumberOfNICs" name="defaultNumberOfNICs"></a><strong>defaultNumberOfNICs</strong></td><td>xsd:int</td><td>
+<p></p>
+         Default number of NICs. Not capped by maxNics.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="defaultScsiControllerType" name="defaultScsiControllerType"></a><strong>defaultScsiControllerType</strong></td><td>xsd:string</td><td>
+<p></p>
+         The default controller type for SCSI controllers.
+ <p>
+ This value is always from the
+ <a href="converter.params.StorageParams.DiskControllerType.html">DiskControllerType</a> enum
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="maxMemoryMB" name="maxMemoryMB"></a><strong>maxMemoryMB</strong></td><td>xsd:long</td><td>
+<p></p>
+         The max memory size in MB supported by the host. This field is NOT
+ capped by the values stored in
+ <a href="converter.params.CloningCapabilities.html#supportedMinMemMB">supportedMinMemMB</a>/
+ <a href="converter.params.CloningCapabilities.html#supportedMaxMemMB">supportedMaxMemMB</a>.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="maxNumberOfNICs" name="maxNumberOfNICs"></a><strong>maxNumberOfNICs</strong></td><td>xsd:int</td><td>
+<p></p>
+         Maximum number of NICs supported by the host
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="minMemoryMB" name="minMemoryMB"></a><strong>minMemoryMB</strong></td><td>xsd:long</td><td>
+<p></p>
+         The min memory size in MB supported by the host. This field is NOT
+ capped by the values stored in
+ <a href="converter.params.CloningCapabilities.html#supportedMinMemMB">supportedMinMemMB</a>/
+ <a href="converter.params.CloningCapabilities.html#supportedMaxMemMB">supportedMaxMemMB</a>.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="numCPUValues" name="numCPUValues"></a><strong>numCPUValues</strong></td><td>xsd:int[]</td><td>
+<p></p>
+         The CPU values supported by the host. This field is NOT
+ capped by the value stored in
+ <a href="converter.params.CloningCapabilities.html#supportedMaxCPUs">supportedMaxCPUs</a>.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="numSupportedCoresPerSocket" name="numSupportedCoresPerSocket"></a><strong>numSupportedCoresPerSocket</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         Maximum number of cores per socket for this guest.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="numSupportedPhysicalSockets" name="numSupportedPhysicalSockets"></a><strong>numSupportedPhysicalSockets</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         Maximum number of sockets supported for this guest.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="recommendedMemMB" name="recommendedMemMB"></a><strong>recommendedMemMB</strong></td><td>xsd:long</td><td>
+<p></p>
+         Recommended default memory size for this guest, in MB.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="supportedCloningMode" name="supportedCloningMode"></a><strong>supportedCloningMode</strong></td><td>xsd:string[]</td><td>
+<p></p>
+         Supported cloning types for the specified combination of
+ source and target.<br>See <a href="converter.params.StorageParams.CloningMode.html">ConverterStorageParamsCloningMode</a><br>
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="supportedDiskControllerType" name="supportedDiskControllerType"></a><strong>supportedDiskControllerType</strong></td><td>xsd:string[]</td><td>
+<p></p>
+         Supported target disk controller types for the specified target.
+ <p>
+ All strings in this array are from the
+ <a href="converter.params.StorageParams.DiskControllerType.html">DiskControllerType</a> enum.
+ <p>
+ The default disk controller type will be stored in
+ conversionParams.cloningParams.storageParams.diskControllerType.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="supportedDiskCreateType" name="supportedDiskCreateType"></a><strong>supportedDiskCreateType</strong></td><td>xsd:string[]</td><td>
+<p></p>
+         Supported target disk types for the specified target.
+ All strings in this array are from the
+ <a href="converter.params.StorageParams.DiskCreateType.html">DiskCreateType</a> enum.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="supportedMaxCPUs" name="supportedMaxCPUs"></a><strong>supportedMaxCPUs</strong></td><td>xsd:int</td><td>
+<p></p>
+         Maximum number of processors supported for this guest.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="supportedMaxMemMB" name="supportedMaxMemMB"></a><strong>supportedMaxMemMB</strong></td><td>xsd:long</td><td>
+<p></p>
+         Maximum memory requirements supported for this guest, in MB.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="supportedMinMemMB" name="supportedMinMemMB"></a><strong>supportedMinMemMB</strong></td><td>xsd:long</td><td>
+<p></p>
+         Minimum memory requirements supported for this guest, in MB.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

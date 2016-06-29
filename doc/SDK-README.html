@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/tr/1999/REC-html401-19991224/loose.dtd">
+<html><head>
+<title>VMware vCenter Converter Standalone SDK Readme</title>
+<!--
+9-Sept-2008; cleanup the where to find info box
+21-, 20-, 18-Jun-2008; simplify even further. We won't have a landing page on www.vmware.com. Need to refer to Communities.
+18-Mar-2008 kwiseth; New simplified readme. Just point to the landing page. Keep named as SDK-README.html to conform to the download instructions.
+-->
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="../docresources/template.css"></link>
+<style type="text/css">
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family:
+	"Courier New", Courier, monospace;
+	}
+
+.Console
+    {
+	font-size: 11px; font-family:
+	"Courier New", Courier, monospace;
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+</style>
+
+
+</head>
+<body>
+
+<table cellpadding="0" cellspacing="5" id="main-table">
+<tr><td id="main-body" align="left">
+<!-- ///*** start of content area ***/// -->
+<img src="../docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+<h1>VMware vCenter Converter Standalone SDK Readme</h1>
+
+<p class="Nav">
+<img src="../docresources/page.gif" alt="Java Samples Readme" width="13" height="16" border="0"></img> &nbsp;<a href="readme_java.htm" title="Go to the Readme for the Java samples...">Readme for Java Samples</a></br>
+<img src="../docresources/page.gif" alt="C# Samples Readme" width="13" height="16" border="0"></img> &nbsp;<a href="readme_dotnet.htm" title="Go to the Readme for the C# samples readme...">Readme for C# (.NET) Samples</a></p>
+<hr/>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="40%" vAlign="top">
+
+<p>Welcome to the <strong>VMware vCenter Converter Standalone SDK</strong>. This document contains the following topics:</p>
+
+	 <ul>
+	  <li><a href="#packagecontents" target="_top">What&#146;s in the SDK Package?</a></li>
+	  <li><a href="#viapi" target="_top">What is the Converter Standalone API?</a></li>
+	  <li><a href="#samples" target="_top">Samples Listings</a>
+	  <ul>
+	  <li><a href="readme_java.htm" title="Readme includes samples listings...">Readme for Java Samples</a></li>
+	  <li><a href="readme_dotnet.htm" title="Readme includes samples listings...">Readme for C# Samples</a></li>
+	  </ul>
+	  </li>
+	  <li><a href="#pubs" target="_top">Documentation</a></li>
+	  <li><a href="#checklist">Checklist of Setup Tasks</a></li>
+	  <li><a href="#resources" target="_top">VMware Resources</a></li>
+	 </ul>
+
+</td><td vAlign="top" align="right">
+
+<!--caveat about state of document -->
+<table cellpadding="5" cellspacing="0" width="450" border="0">
+<tr><td colspan="2" align="left"><span class="Exp">Note:&nbsp;&nbsp;</span> Information in this document may not be current. For up-to-date information, check these VMware Web sites:</td></tr>
+<tr><td colspan="2" align="left"><table cellpadding="5" cellspacing="0" width="100%" border="1" class="light-blue-shade">
+<tr><td vAlign="top" colspan="2" align="left"></td></tr>
+<tr class="Caps"><td vAlign="top" width="45%" class="Caption" align="left">Beta or Pre-release Products</td>
+
+<td vAlign="top"><a href="http://communities.vmware.com/community/beta">VMware Beta Community</a></td></tr>
+
+<tr class="Caps"><td class="Caption">Released SDK Products</td><td vAlign="top"><a href="http://www.vmware.com/support/pubs/sdk_pubs.html">VMware APIs and SDKs</a>
+</td></tr></table>
+</td></tr></table>
+<!--conclude caveat about state of links -->
+
+</td></tr></table>
+
+	<a name="packagecontents"></a>
+	  <h2><strong>What&#146;s in the SDK Package</strong></h2>
+	  <p>The  Converter Standalone SDK is a zipfile that provides:	  </p>
+	  <ul>
+<li>Sample code demonstrating common use cases for programmatically managing  Converter Standalone  server. The sample code includes <a href="readme_java.htm" title="See the Java Samples Readme for more information...">Java</a> and
+<a href="readme_dotnet.htm" title="See the C# Samples Readme for more information">C#</a> source code files.  For information about building and using the samples, see <a href="readme_java.htm" title="See the Java Samples Readme for more information...">Readme for Java Samples</a> and <a href="readme_dotnet.htm" title="See the C# Samples Readme for more information">Readme for .NET Samples</a>.</br></br>
+</li>
+<li>The WSDL that defines the API available on Converter  Standalone server. </li>
+<li>Batch files and shell scripts for automating the process of generating client-side stubs, and for re-building the sample applications. </br>
+
+
+
+For C# developers, Microsoft Visual Studio project files (<code>.sln</code>) have been included.
+
+
+</br></li>
+<li>The <a href="ReferenceGuide/index.html">Converter Standalone API Reference Guide</a> that provides language-neutral
+descriptive information (object type definitions, properties, and method signatures) for
+the  Converter Standalone API.</br></br></li>
+</ul>
+
+
+<h3> Structure of the SDK Directory </h3>
+<p>The  Converter Standalone SDK  package contains the following directories.</p>
+<table cellpadding="5" cellspacing="0" border="1" width="90%" class="TableText">
+<tr class="TableHead"><td vAlign="top">Directory or filename</td><td vAlign="top">Description</td></tr>
+<tr><td vAlign="top">\doc</td>
+  <td vAlign="top">Contains the Converter Standalone SDK documentation. </td>
+</tr>
+<tr><td vAlign="top">\doc\ReferenceGuide</td>
+  <td vAlign="top">API Reference for the Converter Standalone API. Use a Web browser and open index.html. </td>
+</tr>
+<tr><td vAlign="top">\samples</td><td vAlign="top">Top-level directory for the language-specific versions of the sample client applications, one for Java, one for C#. </td></tr>
+<tr>
+  <td vAlign="top">\samples\Axis\</td>
+  <td vAlign="top">Directory containing batch files and Java source code. </td>
+</tr>
+
+<tr><td vAlign="top">\samples\DotNet\cs</td><td vAlign="top">Directory containing batch files, plus several other sub-directories containing Windows C# sample applications (in the appropriate namespace structure), the Microsoft Visual Studio project files (.sln files). </td></tr>
+<tr>
+  <td vAlign="top">\wsdl\converter.wsdl</td>
+  <td vAlign="top">The Web Services Description Language (WSDL) file containing definition of the  Converter Standalone API. </td>
+</tr>
+<tr>
+  <td vAlign="top">\wsdl\converterService.wsdl</td>
+  <td vAlign="top">A WSDL file defining the Web-services endpoint at which the API is available. The converterService.wsdl file references the converter.wsdl with an import statement, so you'll use the appropriate generation tool with converterService (rather than converter.wsdl directly). </td>
+</tr>
+</table>
+
+<a name="viapi"></a>
+<h2><strong>What is the VMware vCenter Converter Standalone API</strong></h2>
+The Converter Standalone API provides language-neutral interfaces to the Converter Standalone server management framework.
+</p>
+<p>The API is implemented as industry-standard Web service, running on Converter Standalone server. The  Converter  Standalone API complies with the Web Services Interoperability Organization (WS-I) Basic Profile 1.0,
+which includes XML Schema 1.0, SOAP 1.1, WSDL 1.1. For more information about the WS-I Basic Profile 1.0,
+see
+<a href="http://www.ws-i.org/Profiles/BasicProfile-1.0-2004-04-16.html">
+http://www.ws-i.org/Profiles/BasicProfile-1.0-2004-04-16.html</a> .
+
+<p><b>NOTE</b> Passing invalid or inconsistent data to API functions can make the Converter Standalone server, worker, or agent become unavailable and thus invalidate active running tasks and jobs. To minimize the risk, verify your data on dedicated test computers.</p>
+
+<h3>Accessing the Converter Standalone Web Service</h3>
+
+<p>By default, the Converter Standalone Web service listens on port 443. This port is for  HTTPS (Secure HTTP) and uses SSL (Secure Sockets Layer) to encrypt communications between client application and server. To access the Web service programmatically,  use the URN from a Web-services client application, as in:</p>
+<p class="Code">
+https://<em>FQDN_Server_or_IP_Address</em>/converter/sdk</p>
+<p>You can configure the server to support HTTP (rather than HTTPS).</p>
+<a name="samples"></a><h2><strong>Samples Listing</strong></h2>
+<p>
+Currently, the Converter Standalone SDK includes only one sample that can build on both Java and Microsoft .NET (C#). This sample converts a physical machine to a virtual one. </p>
+
+<table cellpadding="5" cellspacing="0" border="1" width="500" class="TableText">
+<tr>
+<td width="50%" class="TableHead"><strong>Java Samples</strong></td>
+<td width="50%" class="TableHead"><strong>C# Samples</strong></td>
+</tr>
+
+<tr><td vAlign="top">
+<a href="readme_java.htm">Readme for Java Samples</a></td>
+<td vAlign="top"><a href="readme_dotnet.htm">Readme for DotNet Samples</a></td>
+</tr>
+</table>
+
+<a name="pubs"></a><h2><strong>Documentation</strong></h2>
+<p>The <a href="ReferenceGuide/index.html" target="ReferenceGuide/index.html">API Reference Guide</a> is included in the  Converter Standalone SDK package, located in the <strong>doc</strong> sub-directory of the SDK package. For information about known and resolved issues, see the <em><strong>VMware vCenter Converter Standalone Release Notes</strong></em>.</p>
+<a name="checklist"></a>
+<h2><strong>Checklist of Setup Tasks</strong></h2>
+
+<p>Setting up your workstation for developing client applications using the Converter Standalone SDK involves several steps. Assuming you are already developing applications of one kind or another, some of the steps below may be unnecessary. Modify the details of the process as appropriate for the specifics of your system.  </p>
+	  <p><strong>To get started with the Converter Standalone SDK</strong>:</p>
+	  <ol>
+	  <li>Choose a development language (Java or C#) to use for Web-services client application development.</br></br></li>
+	  <li>Identify the Converter Standalone servers that are the targets of the client applications that you develop.</li>
+
+      <li>
+Install the development environment appropriate for your programming language.</br></br>
+
+<ul>
+<li><strong>For C#</strong>, you need one of the Microsoft development environments, such as Microsoft Visual Studio 2005, Microsoft Visual Studio .NET 2003, or Microsoft Visual C#. (VMware recommends using Microsoft Visual Studio 2005, which includes the required .NET Framework.) For more information, visit</br>
+<a href="http://msdn2.microsoft.com">http://msdn2.microsoft.com</a></br></br>
+</li>
+
+<li><strong>For Java</strong>, you need the Java 2 Platform, Standard Edition (J2SE) 5.0 (JDK 1.5_0_07 or later recommended) or version 1.4.2 (J2SE 1.4.2). For more information, visit <a href="http://java.sun.com/javase/downloads/previous.jsp">http://java.sun.com/javase/downloads/previous.jsp</a></br></br>
+</li>
+</ul>
+</li>
+
+<li>Obtain the appropriate Web-services client tools (XML parser, WSDL-to-proxy-code generation tools, runtime) for your programming language:</br></br>
+<ul>
+<li>
+<strong>For C#</strong>, you need Microsoft .NET Framework 2.0 or Microsoft .NET Framework 1.1. You can obtain Microsoft .NET Framework at</br>
+<a href="http://msdn2.microsoft.com/en-us/netframework/default.aspx">http://msdn2.microsoft.com/en-us/netframework/default.aspx</a>. You will also need the Microsoft .NET 2.0 Software Development Kit, which includes the WSDL-to-stub-generation tool (<code>wsdl.exe</code>) and the command-line version of the C# compiler (<code>csc.exe</code>), both of which are called from the <code>Build2005.cmd</code>. You can obtain the Microsoft .NET 2.0 Sofware Development Kit from
+<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=FE6F2099-B7B4-4F47-A244-C96D69C35DEC&displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyID=FE6F2099-B7B4-4F47-A244-C96D69C35DEC&displaylang=en</a>
+</br></br></li>
+
+<li><strong>For Java</strong>, you need Apache Axis 1.4 or Apache Axis 1.2.1 client-side Web-services libraries. You can use only Apache Axis 1.4 to use  the Java samples that ship with the Converter Standalone SDK. For more information, visit
+</br>
+
+<a href="http://ws.apache.org/axis/java/releases.html">http://ws.apache.org/axis/java/releases.html</a></br></br>
+</li>
+</ul>
+</li>
+
+<li>
+Configure environment and other settings on the workstation as detailed in the respective readme files (<a href="readme_java.htm" title="Go to the Readme for the Java samples...">readme_java.htm</a> and <a href="readme_dotnet.htm" title="Go to the Readme for C# Samples...">readme_dotnet.htm</a>) for the samples.</li>
+</ul>
+</ol>
+
+
+	 <a name="resources"></a><h2><strong>VMware Resources</strong></h2>
+	    <ul>
+		<li><a href="http://www.vmware.com/communities/content/developer/">Developer Center</a></li>
+		<li><a href="http://kb.vmware.com/">Knowledge Base</a></li>
+        <li><a href="http://www.vmware.com/communities/content/vmug/index.html">User Groups</a> </li>
+        <li><a href="http://communities.vmware.com">VMware Communities</a> </li>
+	 </ul>
+<p>
+Copyright © 1998-2013 VMware, Inc. All rights reserved. This product is protected by copyright and intellectual property laws in the United States and other countries as well as by international treaties. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents">http://www.vmware.com/go/patents</a>. </a>
+</p>
+
+
+
+</td></tr></table>
+
+
+
+
+</body></html>

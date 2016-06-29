@@ -1,0 +1,139 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.event.Event" name="converter.event.Event"></a>
+<h1>Data Object - ConverterEvent</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.event.EventHistoryCollector.html#field_detail">ConverterEventHistoryCollector</a>, <a href="converter.task.Task.html#field_detail">ConverterTask</a>
+</dd>
+<dt>Returned by</dt>
+<dd>
+<a href="converter.event.EventManager.html#queryEvent">ConverterQueryEvents</a>, <a href="converter.event.EventHistoryCollector.html#readNext">ConverterReadNextEvents</a>, <a href="converter.event.EventHistoryCollector.html#readPrev">ConverterReadPreviousEvents</a>
+</dd>
+<dt>Extended by</dt>
+<dd>
+<a href="converter.event.CloningFailedEvent.html">ConverterCloningFailedEvent</a>, <a href="converter.event.ConnectedToHelperVmServerEvent.html">ConverterConnectedToHelperVmServerEvent</a>, <a href="converter.event.ConnectingLiveIsoEvent.html">ConverterConnectingLiveIsoEvent</a>, <a href="converter.event.ConnectingToHelperVmServerEvent.html">ConverterConnectingToHelperVmServerEvent</a>, <a href="converter.event.ConnectingToHelperVmServerFailedEvent.html">ConverterConnectingToHelperVmServerFailedEvent</a>, <a href="converter.event.CustomizationEvent.html">ConverterCustomizationEvent</a>, <a href="converter.event.GeneralEvent.html">ConverterGeneralEvent</a>, <a href="converter.event.HostEvent.html">ConverterHostEvent</a>, <a href="converter.event.ObtainHelperVmIpFailedEvent.html">ConverterObtainHelperVmIpFailedEvent</a>, <a href="converter.event.OvaFileEvent.html">ConverterOvaFileEvent</a>, <a href="converter.event.OvfManifestEvent.html">ConverterOvfManifestEvent</a>, <a href="converter.event.OvfUrlEvent.html">ConverterOvfUrlEvent</a>, <a href="converter.event.PreserveDriveLettersFailedEvent.html">ConverterPreserveDriveLettersFailedEvent</a>, <a href="converter.event.PreserveDriveLettersNotNeededEvent.html">ConverterPreserveDriveLettersNotNeededEvent</a>, <a href="converter.event.PreservingDriveLettersEvent.html">ConverterPreservingDriveLettersEvent</a>, <a href="converter.event.ReconfigurationEvent.html">ConverterReconfigurationEvent</a>, <a href="converter.event.SessionEvent.html">ConverterSessionEvent</a>, <a href="converter.event.SourceSnapshottingEvent.html">ConverterSourceSnapshottingEvent</a>, <a href="converter.event.StoppingServicesEvent.html">ConverterStoppingServicesEvent</a>, <a href="converter.event.TaskEvent.html">ConverterTaskEvent</a>, <a href="converter.event.UnixP2VEvent.html">ConverterUnixP2VEvent</a>, <a href="converter.event.UpdateBcdFailedEvent.html">ConverterUpdateBcdFailedEvent</a>, <a href="converter.event.UpdateBcdNotNeededEvent.html">ConverterUpdateBcdNotNeededEvent</a>, <a href="converter.event.UpdateBootIniFailedEvent.html">ConverterUpdateBootIniFailedEvent</a>, <a href="converter.event.UpdateBootIniNotNeededEvent.html">ConverterUpdateBootIniNotNeededEvent</a>, <a href="converter.event.UpdateBootSectorsDiskInfoFailedEvent.html">ConverterUpdateBootSectorsDiskInfoFailedEvent</a>, <a href="converter.event.UpdatingBcdEvent.html">ConverterUpdatingBcdEvent</a>, <a href="converter.event.UpdatingBootIniEvent.html">ConverterUpdatingBootIniEvent</a>, <a href="converter.event.UpdatingBootSectorsEvent.html">ConverterUpdatingBootSectorsEvent</a>, <a href="converter.event.VmEvent.html">ConverterVmEvent</a>, <a href="converter.event.VolumeBlockLevelCloningBitmapDeleteFailedEvent.html">ConverterVolumeBlockLevelCloningBitmapDeleteFailedEvent</a>, <a href="converter.event.VolumeBlockLevelCloningBitmapMergeFailedEvent.html">ConverterVolumeBlockLevelCloningBitmapMergeFailedEvent</a>, <a href="converter.event.VolumeBlockLevelCloningBitmapsIncompatibleEvent.html">ConverterVolumeBlockLevelCloningBitmapsIncompatibleEvent</a>, <a href="converter.event.VolumeBlockLevelCloningNoBitmapsActiveEvent.html">ConverterVolumeBlockLevelCloningNoBitmapsActiveEvent</a>, <a href="converter.event.VolumeCloningEvent.html">ConverterVolumeCloningEvent</a>, <a href="converter.event.WaitingForHelperVmEvent.html">ConverterWaitingForHelperVmEvent</a>, <a href="converter.event.WaitingForHelperVmFailedEvent.html">ConverterWaitingForHelperVmFailedEvent</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.event.Event.Type.html">ConverterEventType</a>, <a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         An event data object describes instance of an event triggered by the backend.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="chainId" name="chainId"></a><strong>chainId</strong></td><td>xsd:int</td><td>
+<p></p>
+         The parent or group ID.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="createdTime" name="createdTime"></a><strong>createdTime</strong></td><td>xsd:dateTime</td><td>
+<p></p>
+         The time the event was created.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="fullMessage" name="fullMessage"></a><strong>fullMessage</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         A formatted text message describing the event. The message may be localized.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="job" name="job"></a><strong>job</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.job.Job.html">ConverterServerJobJob</a></td><td>
+<p></p>
+         The Job object of the event.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="key" name="key"></a><strong>key</strong></td><td>xsd:int</td><td>
+<p></p>
+         The unique event ID.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="type" name="type"></a><strong>type</strong></td><td><a href="converter.event.Event.Type.html">ConverterEventType</a></td><td>
+<p></p>
+         The type of the event
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="userName" name="userName"></a><strong>userName</strong></td><td>xsd:string</td><td>
+<p></p>
+         The user who caused the event.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

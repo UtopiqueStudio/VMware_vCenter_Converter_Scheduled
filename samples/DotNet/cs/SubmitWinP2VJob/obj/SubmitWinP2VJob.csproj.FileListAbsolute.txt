@@ -1,0 +1,14 @@
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Debug\ConverterSDKStub.dll
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Debug\ConverterSDKStub.XmlSerializers.dll
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Debug\ResolveAssemblyReference.cache
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Release\ConverterSDKStub.dll
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Release\ConverterSDKStub.XmlSerializers.dll
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Release\ResolveAssemblyReference.cache
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Release\ConverterSamples.exe
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Release\ConverterSamples.pdb
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Release\ConverterSamples.exe
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Release\ConverterSamples.pdb
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Debug\ConverterSamples.exe
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Debug\ConverterSamples.pdb
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Debug\ConverterSamples.exe
+O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Debug\ConverterSamples.pdb

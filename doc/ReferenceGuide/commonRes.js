@@ -1,0 +1,2 @@
+var ID_Copyright = "Copyright &copy; 1998-2013 VMware, Inc. All rights reserved. This product is protected by copyright and intellectual property laws in the United States and other countries as well as by international treaties. VMware products are covered by one or more patents listed at <a href='http://www.vmware.com/go/patents' target='_blank'>http://www.vmware.com/go/patents</a>.";
+var ID_VersionInformation = "Revision 20130326 Version 5.5";

@@ -1,0 +1,1599 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.QueryManager" name="converter.QueryManager"></a>
+<h1>Managed Object -  
+						ConverterQueryManager</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.ServiceInstanceContent.html#field_detail">ConverterServiceContent</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.info.BootConfigInfo.BootLoaderEntrySpec.html">ConverterBootConfigInfoBootLoaderEntrySpec</a>, <a href="converter.info.ComputerHardwareInfo.html">ConverterComputerHardwareInfo</a>, <a href="converter.info.ComputerInfo.html">ConverterComputerInfo</a>, <a href="converter.info.ComputerOsInfo.html">ConverterComputerOsInfo</a>, <a href="converter.ComputerSpec.html">ConverterComputerSpec</a>, <a href="converter.info.ConfigOptionsInfo.html">ConverterConfigOptionsInfo</a>, <a href="converter.params.ConversionParams.html">ConverterConversionParams</a>, <a href="converter.params.DefaultConversionParamsResult.html">ConverterDefaultConversionParamsResult</a>, <a href="converter.params.DefaultVMReconfigurationParamsResult.html">ConverterDefaultVMReconfigurationParamsResult</a>, <a href="converter.info.HyperVInventoryInfo.html">ConverterHyperVInventoryInfo</a>, <a href="converter.QueryManager.AgentAvailabilityResult.html">ConverterQueryManagerAgentAvailabilityResult</a>, <a href="converter.info.SnapshotInfo.html">ConverterSnapshotInfo</a>, <a href="converter.info.SupportedSources.html">ConverterSupportedSources</a>, <a href="converter.info.SupportedTargets.html">ConverterSupportedTargets</a>, <a href="converter.info.TargetStorageInfo.html">ConverterTargetStorageInfo</a>, <a href="converter.params.TargetVmSpec.html">ConverterTargetVmSpec</a>, <a href="converter.params.TargetVmSpec.ManagedVmLocation.html">ConverterTargetVmSpecManagedVmLocation</a>, <a href="converter.info.ValidationResult.html">ConverterValidationResult</a>
+</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         This managed object type provides methods for querying physical and virtual
+ sources for various information.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r0">
+<td colspan="3">None</td>
+</tr>
+</table>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#getSupportedConfigOptionsForManaged">ConverterGetSupportedConfigOptionsForManaged</a>, <a href="#getSupportedConversionSources">ConverterGetSupportedConversionSources</a>, <a href="#getSupportedReconfigurationSources">ConverterGetSupportedReconfigurationSources</a>, <a href="#getSupportedTargets">ConverterGetSupportedTargets</a>, <a href="#getTargetStorageInfo">ConverterGetTargetStorageInfo</a>, <a href="#getVMReconfigurationDefaults">ConverterGetVMReconfigurationDefaults</a>, <a href="#query">ConverterQuery</a>, <a href="#queryBootableSnapshots">ConverterQueryBootableSnapshots</a>, <a href="#queryComputerInfo">ConverterQueryComputerInfo</a>, <a href="#queryHyperVInventory">ConverterQueryHyperVInventory</a>, <a href="#queryOsInfo">ConverterQueryOsInfo</a>, <a href="#validateAgentAvailability">ConverterValidateAgentAvailability</a>, <a href="#validateParams">ConverterValidateParams</a>, <a href="#preValidate">ConverterValidateTarget</a>, <a href="#validateTargetAndGetDefaults">ConverterValidateTargetAndGetDefaults</a>, <a href="#validateTargetStorageParams">ConverterValidateTargetStorageParams</a></td>
+</tr>
+</table>
+<br>
+<a id="getSupportedConfigOptionsForManaged" name="getSupportedConfigOptionsForManaged"></a>
+<h1>ConverterGetSupportedConfigOptionsForManaged</h1>
+<p></p>
+         Retrieve the ConfigOptions supported by a set of targets. This determines
+ the virtual hardware versions that are available. The default/preferred option
+ is the first entry in the array of Options in each of the ConfigOptionsInfo
+ return value.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>targets</strong></td><td><a href="converter.params.TargetVmSpec.ManagedVmLocation.html">ConverterTargetVmSpecManagedVmLocation[]</a></td><td>
+<p></p>
+         Specifies the array of managed target locations.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.ConfigOptionsInfo.html">ConverterConfigOptionsInfo[]</a></td><td>The set of ConfigOptionsInfo for each of the target locations.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getSupportedConversionSources" name="getSupportedConversionSources"></a>
+<h1>ConverterGetSupportedConversionSources</h1>
+<p></p>
+         Gets supported conversion sources
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.SupportedSources.html">ConverterSupportedSources</a></td><td>Data structure holding the supported source types.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getSupportedReconfigurationSources" name="getSupportedReconfigurationSources"></a>
+<h1>ConverterGetSupportedReconfigurationSources</h1>
+<p></p>
+         Returns supported sources for reconfiguration
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.SupportedSources.html">ConverterSupportedSources</a></td><td>Data structure holding the supported source types.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getSupportedTargets" name="getSupportedTargets"></a>
+<h1>ConverterGetSupportedTargets</h1>
+<p></p>
+         Supported targets on the agent based on the source machine.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the source of the conversion operation
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>bootLoaderEntry</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.info.BootConfigInfo.BootLoaderEntrySpec.html">ConverterBootConfigInfoBootLoaderEntrySpec</a></td><td>
+<p></p>
+         -- deprecated
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.SupportedTargets.html">ConverterSupportedTargets</a></td><td>Data structure holding the supported target types</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getTargetStorageInfo" name="getTargetStorageInfo"></a>
+<h1>ConverterGetTargetStorageInfo</h1>
+<B>Deprecated.</B><I>
+         Do we really need this method? We want to avoid roundtrips to the
+ server in the New Mexico UI client until the wizard is finished.
+ We have been discussing the possibility that client could figure out the
+ number of disks and estimate the disk capacity without invoking the backend.
+      </I>
+<p></p>
+         Calculates and returns the target storage requirements for
+ the conversion operation specified by params.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the source of the conversion operation.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>params</strong></td><td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td>
+<p></p>
+         Conversion job parameters which should specify source
+ volumes and disks to clone.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.TargetStorageInfo.html">ConverterTargetStorageInfo</a></td><td>Data structure listing the number of disks which would be created on the target and the target disks capacities.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getVMReconfigurationDefaults" name="getVMReconfigurationDefaults"></a>
+<h1>ConverterGetVMReconfigurationDefaults</h1>
+<p></p>
+         Fills in the default values for reconfiguration and customization parameters.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the VM to reconfigure/customize.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>bootLoaderEntry</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.info.BootConfigInfo.BootLoaderEntrySpec.html">ConverterBootConfigInfoBootLoaderEntrySpec</a></td><td>
+<p></p>
+         -- deprecated as of Version 2 of Converter API.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.params.DefaultVMReconfigurationParamsResult.html">ConverterDefaultVMReconfigurationParamsResult</a></td><td>The default parameters for configuring and customizing a VM with property info/warnings.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="query" name="query"></a>
+<h1>ConverterQuery</h1>
+<p></p>
+         Queries the specified source for its hardware and OS configuration.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies computer to query.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.ComputerInfo.html">ConverterComputerInfo</a></td><td>Hardware and OS info the specified computer.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.VimFault.html">VimFault</a></td><td></td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="queryBootableSnapshots" name="queryBootableSnapshots"></a>
+<h1>ConverterQueryBootableSnapshots</h1>
+<p></p>
+         Retrieve the list of bootable snapshots from the target VM
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>target</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         The ComputerSpec of the target VM
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.SnapshotInfo.html">ConverterSnapshotInfo[]</a></td><td>The array of valid bootable snapshots</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="queryComputerInfo" name="queryComputerInfo"></a>
+<h1>ConverterQueryComputerInfo</h1>
+<B>Deprecated.</B><I>
+         as of Version 2 of Converter API.
+ Converter VMODL interface is moving away from supporting multi-boot configurations.
+ As a result, queryComputerInfo() and queryOsInfo() are merging into query().
+      </I>
+<p></p>
+         Queries the specified source for its hardware configuration as well as for
+ the configuration of its discovered boot loaders (boot managers). such as
+ boot.ini-based Windows NTLDR, BSD-based Vista boot loader, Linux GRUB.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies computer to query.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.ComputerHardwareInfo.html">ConverterComputerHardwareInfo</a></td><td>Hardware and boot loader config information for the specified computer.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.MethodFault.html">MethodFault</a></td><td></td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="queryHyperVInventory" name="queryHyperVInventory"></a>
+<h1>ConverterQueryHyperVInventory</h1>
+<p></p>
+         Queries the HyperV server to obtain the inventory list
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the HyperV server to query
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.HyperVInventoryInfo.html">ConverterHyperVInventoryInfo</a></td><td>The list of available VMs and basic configuration details is returned from this query interface</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.HostConnectFault.html">HostConnectFault</a></td><td>Thrown if an error occurred when remote host cannot be reached. Typically, a more specific subclass, such as NoHost is thrown.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="queryOsInfo" name="queryOsInfo"></a>
+<h1>ConverterQueryOsInfo</h1>
+<B>Deprecated.</B><I>
+         as of Version 2 of Converter API.
+ Converter VMODL interface is moving away from supporting multi-boot configurations.
+ As a result, queryComputerInfo() and queryOsInfo() are merging into query().
+      </I>
+<p></p>
+         Queries the specified source for the operating system configuration
+ information.
+ <p>
+ If bootLoaderEntry is not not specified, the OS information is retrieved for
+ the "default" OS instance discovered by the backend.
+ <p>
+ For an offline multi-boot computer, locating the default OS instance may be
+ ambiguous. bootLoaderEntry can be used to explicitly specify a particular boot
+ loader configuration entry to reference a particular OS instance.
+ <a href="converter.QueryManager.html#queryComputerInfo">ConverterQueryComputerInfo</a> can be used to discover the
+ boot loader(s) information.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies computer to query.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>bootLoaderEntry</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.info.BootConfigInfo.BootLoaderEntrySpec.html">ConverterBootConfigInfoBootLoaderEntrySpec</a></td><td>
+<p></p>
+         Optionally specifies a boot loader entry to use when locating
+ the OS in offline computer. If a boot loader entry is not specified, the default
+ OS is used by default. The default OS is determined by guessing the default boot
+ loader entry in a default boot loader. For a live source this argument should
+ not be specified because only the currently active OS can be queried.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.ComputerOsInfo.html">ConverterComputerOsInfo</a></td><td>Hardware and software information for the specified computer.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.MethodFault.html">MethodFault</a></td><td></td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="validateAgentAvailability" name="validateAgentAvailability"></a>
+<h1>ConverterValidateAgentAvailability</h1>
+<p></p>
+         Attempts to connect to the Agent which is going to perform source query and
+ conversion based on the source type. Also asks agent if the source system needs a
+ reboot for task to complete properly.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies computer which is about to queried for its information.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.QueryManager.AgentAvailabilityResult.html">ConverterQueryManagerAgentAvailabilityResult</a></td><td>if system needs a reboot or not, if agent is available. If agent is not available throws an exception.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.VimFault.html">VimFault</a></td><td></td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="validateParams" name="validateParams"></a>
+<h1>ConverterValidateParams</h1>
+<p></p>
+         Checks that the ConversionParams are valid for the given destination, and
+ that enough space is free to hold all target disks.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the source of the conversion operation.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>bootLoaderEntry</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.info.BootConfigInfo.BootLoaderEntrySpec.html">ConverterBootConfigInfoBootLoaderEntrySpec</a></td><td>
+<p></p>
+         -- deprecated as of Version 2 of Converter API.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>conversionParams</strong></td><td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td>
+<p></p>
+         Conversion job parameters to validate.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.PropertyInfoFault.html">ConverterPropertyInfoFault</a></td><td>throws a fault containing property info array describing some failed validation.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="preValidate" name="preValidate"></a>
+<h1>ConverterValidateTarget</h1>
+<p></p>
+         Validates availability of the target given the selected source.
+
+ Use this method as a first step to verify that the selected source
+ is supported on the selected target as well as if the target is
+ supported at all.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+<dt>Since </dt>
+<dd>Converter API 3.0</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the source of conversion operation.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>target</strong></td><td><a href="converter.params.TargetVmSpec.html">ConverterTargetVmSpec</a></td><td>
+<p></p>
+         Specifies target VM destination.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="validateTargetAndGetDefaults" name="validateTargetAndGetDefaults"></a>
+<h1>ConverterValidateTargetAndGetDefaults</h1>
+<p></p>
+         Checks that the target specifies a valid destination for a VM.
+ Fails if specified VM already exists. Also fills in the default
+ values for all cloning parameters.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the source of the conversion operation.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>bootLoaderEntry</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.info.BootConfigInfo.BootLoaderEntrySpec.html">ConverterBootConfigInfoBootLoaderEntrySpec</a></td><td>
+<p></p>
+         -- deprecated as of Version 2 of Converter API.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>target</strong></td><td><a href="converter.params.TargetVmSpec.html">ConverterTargetVmSpec</a></td><td>
+<p></p>
+         Specifies target VM destination.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.params.DefaultConversionParamsResult.html">ConverterDefaultConversionParamsResult</a></td><td>The default parameters for the conversion with property info/warnings.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.ConverterFault.html">ConverterConverterFault</a></td><td>Thrown if unable to contact the agent to perform this operation. Typically, a more specific subclass, such as NoRemoteAgent is thrown.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if authentication with the host fails.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="validateTargetStorageParams" name="validateTargetStorageParams"></a>
+<h1>ConverterValidateTargetStorageParams</h1>
+<p></p>
+         Checks if the disks and volumes selections specified do not exceed the space
+ on the target storage.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.QueryManager.html">ConverterQueryManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies the source of conversion operation.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>sourceHardwareInfo</strong></td><td><a href="converter.info.ComputerHardwareInfo.html">ConverterComputerHardwareInfo</a></td><td>
+<p></p>
+         the hardware information about the source. This call
+        demands that this be supplied by client, so that no additional source
+        queries are done by the server.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>conversionParams</strong></td><td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td>
+<p></p>
+         Conversion job parameters
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.info.ValidationResult.html">ConverterValidationResult</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.PropertyInfoFault.html">ConverterPropertyInfoFault</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

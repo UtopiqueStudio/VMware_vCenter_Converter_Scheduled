@@ -1,0 +1,913 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.server.conversion.ConversionManager" name="converter.server.conversion.ConversionManager"></a>
+<h1>Managed Object -  
+						ConverterServerConversionConversionManager</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.ServiceInstanceContent.html#field_detail">ConverterServiceContent</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.server.conversion.ConversionFolder.html">ConverterServerConversionConversionFolder</a>, <a href="converter.server.conversion.ConversionJob.html">ConverterServerConversionConversionJob</a>, <a href="converter.server.conversion.ConversionJobHistoryCollector.html">ConverterServerConversionConversionJobHistoryCollector</a>, <a href="converter.server.conversion.ConversionJobInfo.html">ConverterServerConversionConversionJobInfo</a>, <a href="converter.server.conversion.ConversionJobSpec.html">ConverterServerConversionConversionJobSpec</a>, <a href="converter.server.job.JobFilterSpec.html">ConverterServerJobJobFilterSpec</a>, <a href="vim.scheduler.ScheduledTask.html">ScheduledTask</a>
+</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         Manager for conversion jobs and related managed objects.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="maxCollector" name="maxCollector"></a><strong>maxCollector</strong><span title="May not be present" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         For each client, the maximum number of job collectors that can exist
+  simultaneously.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="rootFolder" name="rootFolder"></a><strong>rootFolder</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.conversion.ConversionFolder.html">ConverterServerConversionConversionFolder</a></td><td>
+<p></p>
+         Property to access the root of the conversion folder tree in which conversion
+ jobs are stored.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">May not be present</span>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#createCollector">ConverterCreateCollectorForJobs</a>, <a href="#createJob">ConverterServerConversionManagerCreateJob</a>, <a href="#destroyJob">ConverterServerConversionManagerDestroyJob</a>, <a href="#getJobExtraInfo">ConverterServerConversionManagerGetJobExtraInfo</a>, <a href="#getJobExtraInfoFromScheduledTask">ConverterServerConversionManagerGetJobExtraInfoFromScheduledTask</a>, <a href="#getJobInfo">ConverterServerConversionManagerGetJobInfo</a>, <a href="#getJobInfoFromScheduledTask">ConverterServerConversionManagerGetJobInfoFromScheduledTask</a>, <a href="#getJobSpec">ConverterServerConversionManagerGetJobSpec</a>, <a href="#getJobSpecFromScheduledTask">ConverterServerConversionManagerGetJobSpecFromScheduledTask</a></td>
+</tr>
+</table>
+<br>
+<a id="createCollector" name="createCollector"></a>
+<h1>ConverterCreateCollectorForJobs</h1>
+<p></p>
+         Creates a job history collector, as a specialized history collector
+  that provides JobInfo objects.
+  <p>
+  Job history collectors do not persist beyond the current client session.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+<dt>Since </dt>
+<dd>Converter API 3.0</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>filter</strong></td><td><a href="converter.server.job.JobFilterSpec.html">ConverterServerJobJobFilterSpec</a></td><td>
+<p></p>
+         The specification for the job query filter.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.conversion.ConversionJobHistoryCollector.html">ConverterServerConversionConversionJobHistoryCollector</a></td><td>The job collector based on the filter.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td>Thrown if the filter is null or unknown.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td>Thrown if there are more than the maximum number of job collectors.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="createJob" name="createJob"></a>
+<h1>ConverterServerConversionManagerCreateJob</h1>
+<p></p>
+         Create a conversion job managed object from the given conversion job
+ specification.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>spec</strong></td><td><a href="converter.server.conversion.ConversionJobSpec.html">ConverterServerConversionConversionJobSpec</a></td><td>
+<p></p>
+         The specification for the new conversion job.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>extraInfo</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:anyType</td><td>
+<p></p>
+         The extra client provided information to be associated wit this
+                  managed object.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.conversion.ConversionJobInfo.html">ConverterServerConversionConversionJobInfo</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.DuplicateName.html">DuplicateName</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td>Thrown if the task specification is not valid.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidName.html">InvalidName</a></td><td></td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.fault.ManagedObjectNotFound.html">ManagedObjectNotFound</a></td><td>Thrown if the entity does not exist.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="destroyJob" name="destroyJob"></a>
+<h1>ConverterServerConversionManagerDestroyJob</h1>
+<p></p>
+         Destroy the given conversion job managed object.  This will release all in-
+ memeory state for the job, delete the corresponding rows in the database,
+ remove corresponding scheduler items from the internal scheduler, notify any
+ active tasks to cancel and destroy any associated active task managed object.
+ <p>
+ In standalone mode this operation can be initiated by the user that
+ created the job or by Administrator.
+ <p>
+ In VC-integrated mode this operation can be initiated by the user that
+ created the job or by any user who has Task.Update privilege on the inventory root.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>job</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.conversion.ConversionJob.html">ConverterServerConversionConversionJob</a></td><td>
+<p></p>
+         The conversion job to destroy.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>activeTaskHandling</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         Determines how to handle an active task if any exists
+                            for the job.  This should be a stringized value of the
+                            ConversionJob.ActiveTaskHandling enumeration.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is not authorized for this operation.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getJobExtraInfo" name="getJobExtraInfo"></a>
+<h1>ConverterServerConversionManagerGetJobExtraInfo</h1>
+<p></p>
+         Gets the job's extra info even if there is no longer a managed object for this
+ task.  It will use the job managed object ID if needed to retrieve the job
+ specification from the database.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>conversionJob</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.conversion.ConversionJob.html">ConverterServerConversionConversionJob</a></td><td>
+<p></p>
+         The conversion job to retrieve's managed object
+ reference.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:anyType</td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getJobExtraInfoFromScheduledTask" name="getJobExtraInfoFromScheduledTask"></a>
+<h1>ConverterServerConversionManagerGetJobExtraInfoFromScheduledTask</h1>
+<p></p>
+         Gets the job's extra info from its associated VC scheduled task object.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>task</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.scheduler.ScheduledTask.html">ScheduledTask</a></td><td>
+<p></p>
+         Scheduled task object.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:anyType</td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getJobInfo" name="getJobInfo"></a>
+<h1>ConverterServerConversionManagerGetJobInfo</h1>
+<p></p>
+         Gets the job information even if there is no longer a managed object for this
+ task.  It will use the job managed object ID if needed to retrieve the job
+ information from the database.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>conversionJob</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.conversion.ConversionJob.html">ConverterServerConversionConversionJob</a></td><td>
+<p></p>
+         The conversion job to retrieve's managed object reference.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.conversion.ConversionJobInfo.html">ConverterServerConversionConversionJobInfo</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getJobInfoFromScheduledTask" name="getJobInfoFromScheduledTask"></a>
+<h1>ConverterServerConversionManagerGetJobInfoFromScheduledTask</h1>
+<p></p>
+         Gets the scheduled job information from its associated VC scheduled task object.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>task</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.scheduler.ScheduledTask.html">ScheduledTask</a></td><td>
+<p></p>
+         Scheduled task object.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.conversion.ConversionJobInfo.html">ConverterServerConversionConversionJobInfo</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getJobSpec" name="getJobSpec"></a>
+<h1>ConverterServerConversionManagerGetJobSpec</h1>
+<p></p>
+         Gets the job specification even if there is no longer a managed object for
+ this task.  It will use the job managed object ID if needed to retrieve the job
+ specification from the database.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>conversionJob</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.conversion.ConversionJob.html">ConverterServerConversionConversionJob</a></td><td>
+<p></p>
+         The conversion job to retrieve's managed object
+ reference.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.conversion.ConversionJobSpec.html">ConverterServerConversionConversionJobSpec</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="getJobSpecFromScheduledTask" name="getJobSpecFromScheduledTask"></a>
+<h1>ConverterServerConversionManagerGetJobSpecFromScheduledTask</h1>
+<p></p>
+         Gets the scheduled job specification from its associated VC scheduled task object.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.conversion.ConversionManager.html">ConverterServerConversionConversionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>task</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.scheduler.ScheduledTask.html">ScheduledTask</a></td><td>
+<p></p>
+         Scheduled task object.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.conversion.ConversionJobSpec.html">ConverterServerConversionConversionJobSpec</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

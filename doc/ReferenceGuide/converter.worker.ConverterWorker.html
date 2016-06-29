@@ -1,0 +1,482 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.worker.ConverterWorker" name="converter.worker.ConverterWorker"></a>
+<h1>Managed Object -  
+						ConverterConverterWorker</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.WorkerInstanceContent.html#field_detail">ConverterWorkerContent</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.ComputerSpec.html">ConverterComputerSpec</a>, <a href="converter.params.ConversionParams.html">ConverterConversionParams</a>, <a href="converter.task.ConversionRuntimeEnvironmentInfo.html">ConverterConversionRuntimeEnvironmentInfo</a>, <a href="converter.worker.ConverterWorker.VmCreationResult.html">ConverterConverterWorkerVmCreationResult</a>, <a href="converter.agent.params.StorageMapping.html">ConverterParamsStorageMapping</a>, <a href="converter.server.conversion.P2VSourceModificationSpec.html">ConverterServerConversionP2VSourceModificationSpec</a>
+</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         ConverterWorker provides methods for creating the target VM,
+ converting sources into target VMs as well as "reconfiguring" VMs.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r0">
+<td colspan="3">None</td>
+</tr>
+</table>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#createVM">ConverterTargetVMManagerCreateVM</a>, <a href="#convert">ConverterWorkerConvert_Task</a>, <a href="#deleteBitmap">ConverterWorkerDeleteBitmap</a>, <a href="#estimateTimeToComplete">ConverterWorkerEstimateTimeToComplete</a></td>
+</tr>
+</table>
+<br>
+<a id="createVM" name="createVM"></a>
+<h1>ConverterTargetVMManagerCreateVM</h1>
+<p></p>
+         Create target VM
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.worker.ConverterWorker.html">ConverterConverterWorker</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         The ComputerSpec of the source machine
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>params</strong></td><td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td>
+<p></p>
+         Specifies parameters for the conversion operations. Can not
+                be a reconfig-only conversion.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.worker.ConverterWorker.VmCreationResult.html">ConverterConverterWorkerVmCreationResult</a></td><td>The ComputerSpec for the target VM and the mapping between the source and target volume/disks</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="convert" name="convert"></a>
+<h1>ConverterWorkerConvert_Task</h1>
+<p></p>
+         Converts source into target or just reconfigures the specified VM.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.worker.ConverterWorker.html">ConverterConverterWorker</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies source of a cloning operation for a cloning task,
+                For a "reconfig"-only task is not specified.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>target</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies cloning target for a cloning operation
+                or reconfig target for a reconfig-only task.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>params</strong></td><td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td>
+<p></p>
+         Specifies parameters for the conversion operations, as well
+                what kind of conversion -- clone+reconfig or reconfig-only this
+                operation is.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>sourceModificationSpec</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.server.conversion.P2VSourceModificationSpec.html">ConverterServerConversionP2VSourceModificationSpec</a></td><td>
+<p></p>
+         Specifies if the Agent should be uninstalled and
+                               the source shutdown.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>storageMapping</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.agent.params.StorageMapping.html">ConverterParamsStorageMapping</a></td><td>
+<p></p>
+         Specifies the source to target volume and/or disk mapping.
+                       Is not passed in case of reconfig-only.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>envInfo</strong></td><td><a href="converter.task.ConversionRuntimeEnvironmentInfo.html">ConverterConversionRuntimeEnvironmentInfo</a></td><td>
+<p></p>
+         Specifies the environment in which the conversion will run.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.task.Task.html">ConverterTask</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="deleteBitmap" name="deleteBitmap"></a>
+<h1>ConverterWorkerDeleteBitmap</h1>
+<p></p>
+         Cleanup the previous bitmaps after an incremental P2V is done.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.worker.ConverterWorker.html">ConverterConverterWorker</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         The source of the previous cloning operation.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>prevBitmapIds</strong></td><td>xsd:string[]</td><td>
+<p></p>
+         The list of bitmaps to be deleted.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="estimateTimeToComplete" name="estimateTimeToComplete"></a>
+<h1>ConverterWorkerEstimateTimeToComplete</h1>
+<p></p>
+         Estimates the time in seconds that will be required to
+  sucessfully complete the given task.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.worker.ConverterWorker.html">ConverterConverterWorker</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>source</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies source of a cloning operation for a cloning task,
+                 For a "reconfig"-only task is not specified.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>target</strong></td><td><a href="converter.ComputerSpec.html">ConverterComputerSpec</a></td><td>
+<p></p>
+         Specifies cloning target for a cloning operation
+                 or reconfig target for a reconfig-only task.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>params</strong></td><td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td>
+<p></p>
+         Specifies parameters for the conversion operations.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>envInfo</strong></td><td><a href="converter.task.ConversionRuntimeEnvironmentInfo.html">ConverterConversionRuntimeEnvironmentInfo</a></td><td>
+<p></p>
+         Additional information on the environment in which the task will run.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:int</td><td>The estimated time remaining and the current percentage estimated complete.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/tr/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>Readme for VMware vCenter Converter Standalone SDK Java Samples</title>
+<!--
+25-Aug-2008 fix option descriptions
+18-June-2008 remove stale links
+18-Mar-2008 kwiseth; getting ready for K/L
+-->
+
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="../docresources/template.css"></link>
+<style type="text/css">
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family:
+	"Courier New", Courier, monospace;
+	}
+
+.Console
+    {
+	font-size: 11px; font-family:
+	"Courier New", Courier, monospace;
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+<table cellpadding="0" cellspacing="5" id="main-table" align="left">
+<tr><td height="1573" align="left" id="main-body">
+<!-- ///*** start of content area ***/// -->
+<img src="../docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+
+<h1>Readme for Java Samples</h1>
+
+<p class="Nav">
+<img src="../docresources/page.gif" alt="Back to the main Readme" width="13" height="16" border="0"></img> &nbsp;<a href="SDK-README.html" title="Go back to the top-level Readme...">VMware vCenter Converter Standalone SDK Readme</a></br>
+<img src="../docresources/page.gif" alt="C# Samples Readme" width="13" height="16" border="0"></img> &nbsp;<a href="readme_dotnet.htm" title="Go to the Readme for the C# samples readme...">Readme for C# (.NET) Samples</a></p>
+<hr/>
+
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td vAlign="top" width="40%">
+
+<p>This document contains summary information about building and running the Java samples provided with the VMware vCenter Converter Standalone SDK.</p>
+
+<ul>
+<li><a href="#buildsamples">Building the Samples</a></li>
+<li><a href="#samplesdesc">Sample Applications</a></li>
+</ul>
+</td><td vAlign="top" align="right">
+
+
+<!--caveat about state of document -->
+<table cellpadding="5" cellspacing="0" width="450" border="0">
+<tr><td colspan="2" align="left"><span class="Exp">Note:&nbsp;&nbsp;</span> Information in this document may not be current. For up-to-date information, check these VMware Web sites:</td></tr>
+<tr><td colspan="2" align="left"><table cellpadding="5" cellspacing="0" width="100%" border="1" class="light-blue-shade">
+<tr><td vAlign="top" colspan="2" align="left"></td></tr>
+<tr class="Caps"><td vAlign="top" width="45%" class="Caption" align="left">Beta or Pre-release Products</td>
+
+<td vAlign="top"><a href="http://communities.vmware.com/community/beta">VMware Beta Community</a></td></tr>
+
+<tr class="Caps"><td class="Caption">Released SDK Products</td><td vAlign="top"><a href="http://www.vmware.com/support/pubs/sdk_pubs.html">VMware APIs and SDKs</a>
+</td></tr></table>
+</td></tr></table>
+<!--conclude caveat about state of links -->
+
+</td></tr>
+</table>
+
+
+<a name="buildsamples"></a>
+<h2><strong>Building the Samples</strong></h2>
+<p>Currently the Converter Standalone SDK includes a Java sample application that converts a physical machine to a virtual one, and several BATCH files for Windows environments.  These BATCH files require setting several environment variables. Before using the sample you need to generate client-side proxy code. </p>
+<p>If there is no Converter Standalone agent  installed   on the physical machine you want to convert, the sample automatically attempts to install it. </p>
+<p><strong>Prerequisites</strong></p>
+<ul><li>The target virtual machine must not exist on the vCenter Server you are logged in.</li>
+<li>On 64-bit platforms, you need to run <code>Build.cmd</code> in a 32-bit command prompt. To start the 32-bit command prompt, run the <code>%Windir%\SysWOW64\cmd.exe</code> file.</li>
+</ul>
+<p><strong>To use the build script (<code>build.bat</code>)</strong></p>
+
+<ul>
+<li>Set the environment variables as shown in the table.
+</br></br>
+<a name="envvariables"></a>
+<table width="625"  border="1" cellpadding="10" cellspacing="0">
+<tr class="light-blue-shade">
+<td vAlign="top">
+<strong>Environment</br>variable</strong></td>
+<td><strong>Description and usage notes</strong></td>
+<td><strong>Example setting</strong></td>
+</tr>
+
+<tr><td vAlign="top">
+<strong>
+<a name="axishome"></a>
+AXISHOME</strong></td>
+<td vAlign="top">Complete path to the Apache Axis installation top-level directory. Must be set prior to using the <code>build.bat</code> script.</td>
+<td vAlign="top"><code>C:\apache\axis1.4</code></td>
+</tr>
+
+
+<tr><td vAlign="top">
+<strong>
+<a name="javahome"></a>
+JAVAHOME</strong></td><td vAlign="top">Path to the binary directory for the Java JDK. </td>
+
+<td vAlign="top">
+  <code> C:\jdk1.5_0_07</br>
+  </code></td>
+</tr>
+</table>
+</br>
+
+</li>
+<p><strong>NOTE</strong> If there are white spaces in the value of the LOCALCLASSPATH environment variable, running the Java sample might cause exceptions. Remove the white spaces from the value or set paths that do not have white spaces.</p>
+<li>Open the Windows command prompt or Linux shell.</li>
+<li>Navigate to the <code>SDK\samples\Axis\</code> sub-directory.</li>
+<li>In the command prompt, type <code>build</code>.</li>
+</ul>
+
+
+<h2><a name="samplesdesc"></a></h2>
+
+<h2><strong>Sample Applications</strong></h2>
+
+<p>The Converter Standalone SDK package includes an <a href="ReferenceGuide\index.html">Converter Standalone API Reference Guide</a> that provides information about  the available sample applications and helper classes. It is located in the <code>SDK\doc\ReferenceGuide</code> directory. </p>
+<table width="100%"  border="1" cellpadding="10" cellspacing="0">
+  <tr>
+    <td class="TableHead" vAlign="top"> Sample</td>
+    <td class="TableHead">Description, command-line syntax, and example...</td>
+  </tr>
+  <tr>
+    <td vAlign="top"><strong>SubmitWinP2VJob</strong></td>
+    <td vAlign="top">Converts a Windows physical machine into a virtual machine.
+      The sample takes a properties file as an input. A sample properties file is provided along with the sample (<code>submitwinp2vjob.properties</code>). The properties file contains information about the physical source, vCenter Server,  Converter Standalone server, and the conversion job.<BR>
+          <p><strong>Command line syntax:</strong></br>
+              <span class="Code">set   LOCALCLASSPATH=%CD%;%AXISHOME%\lib\;%AXISHOME%\lib\activation.jar;%AXISHOME%\lib\axis.jar;%AXISHOME%\lib\axis-ant.jar;%AXISHOME%\lib\commons-codec-1.3.jar;%AXISHOME%\lib\commons-discovery-0.2.jar;%AXISHOME%\lib\commons-httpclient-3.0.1.jar;%AXISHOME%\lib\commons-httpclient-3.0-rc2.jar;%AXISHOME%\lib\commons-logging-1.0.4.jar;%AXISHOME%\lib\commons-net-1.0.0-dev.jar;%AXISHOME%\lib\jaxrpc.jar;%AXISHOME%\lib\junit-3.8.1.jar;%AXISHOME%\lib\log4j-1.2.8.jar;%AXISHOME%\lib\mailapi.jar;%AXISHOME%\lib\saaj.jar;%AXISHOME%\lib\wsdl4j-1.5.1.jar;converter.jar<BR>
+              <BR>
+              java   -cp %LOCALCLASSPATH% SubmitWinP2VJob/Program &lt;propertiesfile&gt;
+              <propertiesfile>
+              <propertiesfile>
+            </span></p>
+      <p><strong>Examples:</strong></br>
+          <span class="Code">java -cp %LOCALCLASSPATH% SubmitWinP2VJob/Program submitwinp2vjob.properties </span></p></td>
+  </tr>
+</table>
+</br>
+  <a name="resources"></a></h3>
+<h2><strong>VMware Resources</strong></h2>
+<ul>
+		<li><a href="http://www.vmware.com/communities/content/developer/">Developer Center</a></li>
+        <li><a href="http://kb.vmware.com/">Knowledge Base</a></li>
+        <li><a href="http://www.vmware.com/communities/content/vmug/index.html">User Groups</a> </li>
+        <li><a href="http://communities.vmware.com">VMware Communities</a> </li>
+ 	    <li><a href="http://communities.vmware.com/community/developer/">VMware Developer Community</a></li>
+</ul>
+<p>
+Copyright © 1998-2013 VMware, Inc. All rights reserved. This product is protected by copyright and intellectual property laws in the United States and other countries as well as by international treaties. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents">http://www.vmware.com/go/patents</a>.
+</p>
+
+
+
+</td></tr></table>
+</body></html>
+

@@ -1,0 +1,143 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.agent.internal.LegacyPartition" name="converter.agent.internal.LegacyPartition"></a>
+<h1>Data Object - ConverterAgentInternalLegacyPartition</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.agent.internal.DiskLayoutInfo.html#field_detail">ConverterAgentInternalDiskLayoutInfo</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         Legacy IBM PC/DOS 3.3 disk partition information.  A partition is
+  a contiguous set of blocks on a disk that is marked for use.  The
+  typeId identifies the purpose of the data in the partition.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="active" name="active"></a><strong>active</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         True if it is active partition
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="empty" name="empty"></a><strong>empty</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         True if the volume is empty
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="firstSector" name="firstSector"></a><strong>firstSector</strong></td><td>xsd:int</td><td>
+<p></p>
+         The start sector.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="lengthInSectors" name="lengthInSectors"></a><strong>lengthInSectors</strong></td><td>xsd:int</td><td>
+<p></p>
+         The end sector.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="logical" name="logical"></a><strong>logical</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         The flag to indicate whether or not the partition is 
+  logical.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="partitionGuid" name="partitionGuid"></a><strong>partitionGuid</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         For GPT partitions the type is GUID+UUID
+ If present then the disk must be in GPT format.
+      <p></p>
+<B><I>Since </I></B>Converter API 4.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="partitionNumber" name="partitionNumber"></a><strong>partitionNumber</strong></td><td>xsd:int</td><td>
+<p></p>
+         The partition number.  Must be a positive integer.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="partitionUuid" name="partitionUuid"></a><strong>partitionUuid</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+<p></p>
+<B><I>Since </I></B>Converter API 4.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="typeId" name="typeId"></a><strong>typeId</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:byte</td><td>
+<p></p>
+         MBR type of data in the file system.  Must be non-zero if present.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

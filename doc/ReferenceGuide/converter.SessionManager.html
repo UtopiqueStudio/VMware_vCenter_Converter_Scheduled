@@ -1,0 +1,797 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.SessionManager" name="converter.SessionManager"></a>
+<h1>Managed Object -  
+						ConverterSessionManager</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.ServiceInstanceContent.html#field_detail">ConverterServiceContent</a>
+</dd>
+<dt>Extended by</dt>
+<dd>
+<a href="converter.agent.AgentSessionManager.html">ConverterAgentSessionManager</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.UserSession.html">ConverterUserSession</a>
+</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         This managed object type includes methods for logging on and
+  logging off clients.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="currentSession" name="currentSession"></a><strong>currentSession</strong><span title="May not be present" class="footnote-ref">*</span></td><td><a href="converter.UserSession.html">ConverterUserSession</a></td><td>
+<p></p>
+         This property contains information about the client's current session.
+  If the client is not logged on, the value is null.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="defaultLocale" name="defaultLocale"></a><strong>defaultLocale</strong><span title="Required Privilege: System.Anonymous" class="privilege-ref"> P</span></td><td>xsd:string</td><td>
+<p></p>
+         This is the default server locale.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="messageLocaleList" name="messageLocaleList"></a><strong>messageLocaleList</strong><span title="May not be present" class="footnote-ref">*</span><span title="Required Privilege: System.Anonymous" class="privilege-ref"> P</span></td><td>xsd:string[]</td><td>
+<p></p>
+         Provides the list of locales for which the server has localized messages.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="sessionList" name="sessionList"></a><strong>sessionList</strong><span title="May not be present" class="footnote-ref">*</span><span title="Required Privilege: Sessions.TerminateSession" class="privilege-ref"> P</span></td><td><a href="converter.UserSession.html">ConverterUserSession[]</a></td><td>
+<p></p>
+         The list of currently active sessions.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="supportedLocaleList" name="supportedLocaleList"></a><strong>supportedLocaleList</strong><span title="May not be present" class="footnote-ref">*</span><span title="Required Privilege: System.Anonymous" class="privilege-ref"> P</span></td><td>xsd:string[]</td><td>
+<p></p>
+         Provides the list of locales that the server supports.
+  Listing a locale ensures that some standardized information such as dates appear
+  in the appropriate format. Other localized information, such as error messages,
+  are displayed, if available. If localized information is not available, the
+  message is returned using the system locale.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">May not be present</span><span class="privilege-ref">P</span><span class="footnote">Required privilege - see tooltip for details</span>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#impersonate">ConverterImpersonate</a>, <a href="#login">ConverterLogin</a>, <a href="#loginExtension">ConverterLoginExtension</a>, <a href="#loginSession">ConverterLoginSession</a>, <a href="#logout">ConverterLogout</a>, <a href="#setLocale">ConverterSetLocale</a>, <a href="#terminate">ConverterTerminateSession</a></td>
+</tr>
+</table>
+<br>
+<a id="impersonate" name="impersonate"></a>
+<h1>ConverterImpersonate</h1>
+<p></p>
+         Impersonate client.  This method only works if the call is made over a pipe
+  and fails if the user has no permissions granted.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>System.Anonymous</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>locale</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         A two-character ISO-639 language ID (like "en")
+                optionally followed by an
+                underscore and a two-character ISO 3166 country ID (like "US").
+                <p>
+                Examples are "de", "fr_CA", "zh", "zh_CN", and "zh_TW".
+                Note: The method uses the server default locale when
+                a locale is not provided. This default can be configured in the
+                server configuration file. If unspecified, it defaults to the
+                locale of the server environment or English ("en") if unsupported.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.UserSession.html">ConverterUserSession</a></td><td>The UserSession object.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLocale.html">InvalidLocale</a></td><td>Thrown if the locale is invalid or unknown to the server.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is valid, but has no access granted.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="login" name="login"></a>
+<h1>ConverterLogin</h1>
+<p></p>
+         Log on to the server.  This method fails if the user name and password are
+  incorrect, or if the user is valid but has no permissions granted.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>System.Anonymous</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>userName</strong></td><td>xsd:string</td><td>
+<p></p>
+         The name of the user who is logging on to the server.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>password</strong></td><td>xsd:string</td><td>
+<p></p>
+         The password of the user who is logging on to the server.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>locale</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         A two-character ISO-639 language ID (like "en")
+                optionally followed by an
+                underscore and a two-character ISO 3166 country ID (like "US").
+                <p>
+                Examples are "de", "fr_CA", "zh", "zh_CN", and "zh_TW".
+                Note: The method uses the server default locale when
+                a locale is not provided. This default can be configured in the
+                server configuration file. If unspecified, it defaults to the
+                locale of the server environment or English ("en") if unsupported.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.UserSession.html">ConverterUserSession</a></td><td>The UserSession object.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLocale.html">InvalidLocale</a></td><td>Thrown if the locale is invalid or unknown to the server.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if the user and password combination is invalid.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is valid, but has no access granted.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="loginExtension" name="loginExtension"></a>
+<h1>ConverterLoginExtension</h1>
+<p></p>
+         Log on to the extension server.  This method fails if the user name and password
+  are incorrect, or if the user is valid but has no permissions granted.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>System.Anonymous</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>userName</strong></td><td>xsd:string</td><td>
+<p></p>
+         The name of the VC user who is logging on to the server.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>password</strong></td><td>xsd:string</td><td>
+<p></p>
+         The password of the user on VC.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>locale</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         A two-character ISO-639 language ID (like "en")
+                optionally followed by an
+                underscore and a two-character ISO 3166 country ID (like "US").
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.UserSession.html">ConverterUserSession</a></td><td>The UserSession object.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidLocale.html">InvalidLocale</a></td><td>Thrown if the locale is invalid or unknown to the server.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if the user and sessionId combination is invalid.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is valid, but has no access granted.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="loginSession" name="loginSession"></a>
+<h1>ConverterLoginSession</h1>
+<p></p>
+         Log on to the extension server.  This method fails if the user name and session ID
+  are incorrect, or if the user is valid but has no permissions granted.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>System.Anonymous</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>userName</strong></td><td>xsd:string</td><td>
+<p></p>
+         The name of the VC user who is logging on to the server.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><strong>sessionId</strong></td><td>xsd:string</td><td>
+<p></p>
+         The session ID of the user's active VC session.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>locale</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         A two-character ISO-639 language ID (like "en")
+                optionally followed by an
+                underscore and a two-character ISO 3166 country ID (like "US").
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.UserSession.html">ConverterUserSession</a></td><td>The UserSession object.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.NoHostConnection.html">ConverterNoHostConnection</a></td><td>Thrown if an error occurred when connecting to the host.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidLocale.html">InvalidLocale</a></td><td>Thrown if the locale is invalid or unknown to the server.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLogin.html">InvalidLogin</a></td><td>Thrown if the user and sessionId combination is invalid.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is valid, but has no access granted.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="logout" name="logout"></a>
+<h1>ConverterLogout</h1>
+<p></p>
+         Log out and terminate the current session.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="setLocale" name="setLocale"></a>
+<h1>ConverterSetLocale</h1>
+<p></p>
+         Sets the session locale.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>locale</strong></td><td>xsd:string</td><td>
+<p></p>
+         A two-character ISO-639 language ID (like "en")
+                optionally followed by an
+                underscore and a two-character ISO 3166 country ID (like "US").
+                <p>
+                Examples are "de", "fr_CA", "zh", "zh_CN", and "zh_TW".
+                Note: The method uses the server default locale when
+                a locale is not provided. This default can be configured in the
+                server configuration file. If unspecified, it defaults to the
+                locale of the server environment or English ("en") if unsupported.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidLocale.html">InvalidLocale</a></td><td>Thrown if the locale is invalid or unknown to the server.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="terminate" name="terminate"></a>
+<h1>ConverterTerminateSession</h1>
+<p></p>
+         Log off and terminate the provided list of sessions.
+  <p>
+  This method is only transactional for each session ID. The set of sessions
+  are terminated sequentially, as specified in the list. If a failure
+  occurs, for example, because of an unknown sessionID, the method aborts with
+  an exception. When the method aborts, any sessions that have not yet been
+  terminated are left in their unterminated state.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>Sessions.TerminateSession</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.SessionManager.html">ConverterSessionManager</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>sessionId</strong></td><td>xsd:string[]</td><td>
+<p></p>
+         A list of sessions to terminate.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td>Thrown if a sessionId matches the current session. Use the logout method to terminate the current session.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NotFound.html">NotFound</a></td><td>Thrown if a sessionId could not be found as a valid logged-on session.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

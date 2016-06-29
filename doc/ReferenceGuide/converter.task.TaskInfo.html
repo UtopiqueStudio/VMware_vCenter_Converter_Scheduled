@@ -1,0 +1,295 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.task.TaskInfo" name="converter.task.TaskInfo"></a>
+<h1>Data Object - ConverterTaskInfo</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.task.Task.html#field_detail">ConverterTask</a>, <a href="converter.event.TaskEvent.html#field_detail">ConverterTaskEvent</a>, <a href="converter.task.TaskHistoryCollector.html#field_detail">ConverterTaskHistoryCollector</a>
+</dd>
+<dt>Returned by</dt>
+<dd>
+<a href="converter.task.TaskManager.html#createTask">ConverterCreateTask</a>, <a href="converter.task.TaskManager.html#getChildTask">ConverterGetChildTask</a>, <a href="converter.task.TaskManager.html#getTaskInfo">ConverterGetTaskInfo</a>, <a href="converter.task.TaskHistoryCollector.html#readNext">ConverterReadNextTasks</a>, <a href="converter.task.TaskHistoryCollector.html#readPrev">ConverterReadPreviousTasks</a>, <a href="converter.server.protection.ProtectionJob.html#rebootAndResume">ConverterServerProtectionJobRebootAndResume</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a>, <a href="converter.server.job.Job.html">ConverterServerJobJob</a>, <a href="converter.task.Task.html">ConverterTask</a>, <a href="converter.task.TaskInfo.State.html">ConverterTaskInfoState</a>, <a href="vmodl.LocalizedMethodFault.html">LocalizedMethodFault</a>, <a href="vim.Task.html">Task</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         This data object type contains all information about a task. A task
+  represents a long-running operation performed by the server.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="cancelable" name="cancelable"></a><strong>cancelable</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Flag to indicate whether or not the cancel task operation is supported.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="cancelled" name="cancelled"></a><strong>cancelled</strong></td><td>xsd:boolean</td><td>
+<p></p>
+         Flag to indicate whether or not the client requested
+  cancellation of the task.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="completeTime" name="completeTime"></a><strong>completeTime</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:dateTime</td><td>
+<p></p>
+         Time stamp when the task was completed (whether success or failure).
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="data" name="data"></a><strong>data</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:anyType</td><td>
+<p></p>
+         Task-specific data associated with this task.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="descriptionId" name="descriptionId"></a><strong>descriptionId</strong></td><td>xsd:string</td><td>
+<p></p>
+         An identifier for this operation.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="error" name="error"></a><strong>error</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.LocalizedMethodFault.html">LocalizedMethodFault</a></td><td>
+<p></p>
+         If the task state is "error", then this property contains the fault code.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="estimatedTimeRemaining" name="estimatedTimeRemaining"></a><strong>estimatedTimeRemaining</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         This gives an estimated number of seconds to complete for the task.
+
+ If this property is not set, then the task does not estimate this value.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="eventChainId" name="eventChainId"></a><strong>eventChainId</strong></td><td>xsd:int</td><td>
+<p></p>
+         Event chain ID that leads to the corresponding events.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="hasChildren" name="hasChildren"></a><strong>hasChildren</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         Flag to indicate whether or not the task has any children.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="incremental" name="incremental"></a><strong>incremental</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         Whether this is an incremental task (i.e. for P2V synchronization).
+ Assume false if unset.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="job" name="job"></a><strong>job</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.server.job.Job.html">ConverterServerJobJob</a></td><td>
+<p></p>
+         Converter job to which the operation applies.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="key" name="key"></a><strong>key</strong></td><td>xsd:string</td><td>
+<p></p>
+         The unique key for the task.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="logBundleInfo" name="logBundleInfo"></a><strong>logBundleInfo</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.DiagnosticManager.TaskLogBundleInfo.html">ConverterDiagnosticManagerTaskLogBundleInfo</a></td><td>
+<p></p>
+<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="name" name="name"></a><strong>name</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The name of the task. This is not set for internal tasks.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="parentTask" name="parentTask"></a><strong>parentTask</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.task.Task.html">ConverterTask</a></td><td>
+<p></p>
+         Reference to the parent task of this task.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="progress" name="progress"></a><strong>progress</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         If the task state is "running", then this property contains a
+  progress measurement, expressed as percentage completed, from 0 to 100.
+  <p>
+  If this property is not set, then the command does not report progress.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="queueTime" name="queueTime"></a><strong>queueTime</strong></td><td>xsd:dateTime</td><td>
+<p></p>
+         Time stamp when the task was created.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="result" name="result"></a><strong>result</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:anyType</td><td>
+<p></p>
+         If the task state is "success", then this property may be used
+  to hold a return value.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="rootTask" name="rootTask"></a><strong>rootTask</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.task.Task.html">ConverterTask</a></td><td>
+<p></p>
+         Reference to the root task of the task hierarchy of which this task is a part.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="source" name="source"></a><strong>source</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The path to the source machine. Used for visualization.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="startTime" name="startTime"></a><strong>startTime</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:dateTime</td><td>
+<p></p>
+         Time stamp when the task started running.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="state" name="state"></a><strong>state</strong></td><td><a href="converter.task.TaskInfo.State.html">ConverterTaskInfoState</a></td><td>
+<p></p>
+         Runtime status of the task.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="target" name="target"></a><strong>target</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The path to the destination VM. Used for visualization.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="task" name="task"></a><strong>task</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="converter.task.Task.html">ConverterTask</a></td><td>
+<p></p>
+         The managed object that represents this task.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="transferRate" name="transferRate"></a><strong>transferRate</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         Transfer rate of the cloning operation in kilobytes per second.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="userName" name="userName"></a><strong>userName</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The user who created the task.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="vcTask" name="vcTask"></a><strong>vcTask</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.Task.html">Task</a></td><td>
+<p></p>
+         The VC task for an extension task.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

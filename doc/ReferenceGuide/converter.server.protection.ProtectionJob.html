@@ -1,0 +1,544 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.server.protection.ProtectionJob" name="converter.server.protection.ProtectionJob"></a>
+<h1>Managed Object -  
+						ConverterServerProtectionProtectionJob</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.server.protection.ProtectionFolder.html#field_detail">ConverterServerProtectionProtectionFolder</a>, <a href="converter.server.protection.ProtectionJobInfo.html#field_detail">ConverterServerProtectionProtectionJobInfo</a>
+</dd>
+<dt>Parameter to</dt>
+<dd>
+<a href="converter.server.protection.ProtectionManager.html#destroyJob">ConverterServerProtectionManagerDestroyJob</a>, <a href="converter.server.protection.ProtectionManager.html#getJobExtraInfo">ConverterServerProtectionManagerGetJobExtraInfo</a>, <a href="converter.server.protection.ProtectionManager.html#getJobInfo">ConverterServerProtectionManagerGetJobInfo</a>, <a href="converter.server.protection.ProtectionManager.html#getJobSpec">ConverterServerProtectionManagerGetJobSpec</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.params.ConversionParams.html">ConverterConversionParams</a>, <a href="converter.server.protection.ConversionParamsUpdateSpec.html">ConverterServerProtectionConversionParamsUpdateSpec</a>, <a href="converter.server.protection.ProtectionJobInfo.html">ConverterServerProtectionProtectionJobInfo</a>, <a href="converter.server.protection.ProtectionJob.RunSpec.html">ConverterServerProtectionProtectionJobRunSpec</a>, <a href="converter.server.protection.ProtectionJobSpec.html">ConverterServerProtectionProtectionJobSpec</a>, <a href="converter.server.protection.ProtectionParams.html">ConverterServerProtectionProtectionParams</a>, <a href="converter.server.protection.ProtectionParamsUpdateSpec.html">ConverterServerProtectionProtectionParamsUpdateSpec</a>, <a href="converter.task.TaskInfo.html">ConverterTaskInfo</a>
+</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="info" name="info"></a><strong>info</strong></td><td><a href="converter.server.protection.ProtectionJobInfo.html">ConverterServerProtectionProtectionJobInfo</a></td><td>
+<p></p>
+         Return the protection job information associated with this protection job. This
+ is overrode for covariant return type purposes.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="spec" name="spec"></a><strong>spec</strong></td><td><a href="converter.server.protection.ProtectionJobSpec.html">ConverterServerProtectionProtectionJobSpec</a></td><td>
+<p></p>
+         Return the protection specification associated with this protection job. This
+ is overrode for covariant return type purposes.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="converter.server.job.Job.html">ConverterServerJobJob</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3"><a href="converter.server.job.Job.html#extraInfo">extraInfo</a>, <a href="converter.server.job.Job.html#info">info</a>, <a href="converter.server.job.Job.html#spec">spec</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="converter.server.ManagedEntity.html">ConverterManagedEntity</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3"><a href="converter.server.ManagedEntity.html#name">name</a>, <a href="converter.server.ManagedEntity.html#overallStatus">overallStatus</a></td>
+</tr>
+</table>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#rebootAndResume">ConverterServerProtectionJobRebootAndResume</a>, <a href="#scheduleSingleRun">ConverterServerProtectionJobScheduleSingleRun</a>, <a href="#updateConversionParams">ConverterServerProtectionJobUpdateConversionParams</a>, <a href="#updateProtectionParams">ConverterServerProtectionJobUpdateProtectionParams</a>, <a href="#updateSecondaryReplication">ConverterServerProtectionJobUpdateSecondaryReplication</a></td>
+</tr>
+<tr class="r1">
+<td>
+            Methods inherited from <a href="converter.server.job.Job.html">ConverterServerJobJob</a></td>
+</tr>
+<tr class="r0">
+<td><a href="converter.server.job.Job.html#resume">ConverterServerJobResume</a>, <a href="converter.server.job.Job.html#stop">ConverterServerJobStop</a>, <a href="converter.server.job.Job.html#suspend">ConverterServerJobSuspend</a>, <a href="converter.server.job.Job.html#updateExtraInfo">ConverterServerJobUpdateExtaInfo</a>, <a href="converter.server.job.Job.html#updateJobSpec">ConverterServerJobUpdateSpec</a></td>
+</tr>
+<tr class="r1">
+<td>
+            Methods inherited from <a href="converter.server.ManagedEntity.html">ConverterManagedEntity</a></td>
+</tr>
+<tr class="r0">
+<td><a href="converter.server.ManagedEntity.html#rename">ConverterServerManagedEntityRename</a></td>
+</tr>
+</table>
+<br>
+<a id="rebootAndResume" name="rebootAndResume"></a>
+<h1>ConverterServerProtectionJobRebootAndResume</h1>
+<p></p>
+         Reboot the protected source and resume protection operations.  This should be
+ called only if the source's protection agent has been changed in such a way
+ that a reboot of the machine is required to continue protection operations.
+ <p>
+ Note: If a time for reboot is specified then a VC scheduled task will be
+ created to trigger this operation at the appropriate time.  This task will be
+ set in return returned task's info property as
+ <a href="converter.task.TaskInfo.html#vcTask">vcTask</a>
+ </p>
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.protection.ProtectionJob.html">ConverterServerProtectionProtectionJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>timeToRun</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:dateTime</td><td>
+<p></p>
+         An optional time to run this operation.  If set then a VC
+ task will be created to initiate the operation.  If not set the the operation
+ will be run immediately.
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.task.TaskInfo.html">ConverterTaskInfo</a></td><td>A task instance to use to monitor this reboot and resume operation.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="scheduleSingleRun" name="scheduleSingleRun"></a>
+<h1>ConverterServerProtectionJobScheduleSingleRun</h1>
+<p></p>
+         Schedules a single run to occur.  Usually this will be a request to do an
+ immediate Full P2V but can also be for an immediate incremental P2V.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.protection.ProtectionJob.html">ConverterServerProtectionProtectionJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>runSpec</strong></td><td><a href="converter.server.protection.ProtectionJob.RunSpec.html">ConverterServerProtectionProtectionJobRunSpec</a></td><td>
+<p></p>
+         The speicification for the run of this job.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="updateConversionParams" name="updateConversionParams"></a>
+<h1>ConverterServerProtectionJobUpdateConversionParams</h1>
+<p></p>
+         Updates the conversion parameters for this protection job.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.protection.ProtectionJob.html">ConverterServerProtectionProtectionJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>newParams</strong></td><td><a href="converter.server.protection.ConversionParamsUpdateSpec.html">ConverterServerProtectionConversionParamsUpdateSpec</a></td><td>
+<p></p>
+         Updates to the conversion parameters.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.params.ConversionParams.html">ConverterConversionParams</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="updateProtectionParams" name="updateProtectionParams"></a>
+<h1>ConverterServerProtectionJobUpdateProtectionParams</h1>
+<p></p>
+         Update the protection job's protection parameters to the newParams value,
+ updating the internal scheduler. The old protection parameters are returned.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.protection.ProtectionJob.html">ConverterServerProtectionProtectionJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>newParams</strong></td><td><a href="converter.server.protection.ProtectionParamsUpdateSpec.html">ConverterServerProtectionProtectionParamsUpdateSpec</a></td><td>
+<p></p>
+<br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.protection.ProtectionParams.html">ConverterServerProtectionProtectionParams</a></td><td></td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="updateSecondaryReplication" name="updateSecondaryReplication"></a>
+<h1>ConverterServerProtectionJobUpdateSecondaryReplication</h1>
+<p></p>
+         Update to the new requested replication mechanism.  If it is valid we will use
+ or monitor this new mechanism for secondary replication.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.protection.ProtectionJob.html">ConverterServerProtectionProtectionJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>newReplicationMechanism</strong></td><td>xsd:string</td><td>
+<p></p>
+         The newly requested replication mechanism to be
+ used or monitored. Must be a stringized enum value from
+ srm.VmProtectionInfo.ReplicationMechanism.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:string</td><td>Stringized value of the previous requested replication mechanism.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

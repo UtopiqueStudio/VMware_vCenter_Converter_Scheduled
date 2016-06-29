@@ -1,0 +1,130 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.agent.internal.DiskAttachPoint" name="converter.agent.internal.DiskAttachPoint"></a>
+<h1>Data Object - ConverterAgentInternalDiskAttachPoint</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.agent.internal.DiskAttachPoint.html#field_detail">ConverterAgentInternalDiskAttachPoint</a>, <a href="converter.agent.internal.DiskSpec.html#field_detail">ConverterAgentInternalDiskSpec</a>, <a href="converter.agent.internal.TargetStorageLayout.TargetDiskInfo.html#field_detail">ConverterAgentInternalTargetStorageLayoutTargetDiskInfo</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.agent.internal.DiskAttachPoint.BusType.html">ConverterAgentInternalDiskAttachPointBusType</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         Information about where to attach (controller and unit) the target virtual disk.
+ This is used at present for <a href="converter.agent.internal.TargetStorageLayout.TargetDiskInfo.html#attachPoint">attachPoint</a>
+ and also for <a href="converter.agent.internal.DiskSpec.html#attachPoint">attachPoint</a>.  It serves to specify, for a given
+ TargetDiskInfo entry, where the target disk should be attached, then later allows
+ DiskSpec values for the newly created machine to be correlated back.  All three
+ of the values can be changed in remapping to fit the constraints of the given 
+ target.  These are only remapped
+ if necessary but might change because the target doesn't support the bus type  
+ (e.g. ESX doesn't allow IDE disks) or the target doesn't support the bus number
+ (e.g. WS only allows 1 SCSI controller) or the target doesn't support the unit
+ number (e.g. WS allows 7 devices per SCSI controller but ESX allows 16).,
+ but when the VM is created, the supplied ConfigSpec must be created to match
+ the current DiskAttachPoint information.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="bus" name="bus"></a><strong>bus</strong></td><td>xsd:int</td><td>
+<p></p>
+         This corresponds to the busNumber field in 
+ <a href="vim.vm.device.VirtualController.html">VirtualController</a>.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="busType" name="busType"></a><strong>busType</strong></td><td><a href="converter.agent.internal.DiskAttachPoint.BusType.html">ConverterAgentInternalDiskAttachPointBusType</a></td><td>
+<p></p>
+         When a new VM is created, the appropriate kind of 
+ <a href="vim.vm.device.VirtualController.html">VirtualController</a> must be listed
+ be listed in the <a href="vim.vm.VirtualHardware.html#device">device</a> sub-field of the <a href="vim.vm.ConfigInfo.html#hardware">hardware</a> field of the <a href="vim.vm.ConfigInfo.html">VirtualMachineConfigInfo</a> associated
+ with the same VM for which this is the <a href="converter.agent.internal.TargetStorageLayout.html">ConverterAgentInternalTargetStorageLayout</a>.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="history" name="history"></a><strong>history</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.agent.internal.DiskAttachPoint.html">ConverterAgentInternalDiskAttachPoint</a></td><td>
+<p></p>
+<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="origin" name="origin"></a><strong>origin</strong></td><td>xsd:int</td><td>
+<p></p>
+         This identifies the origin of the current parameters.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="unit" name="unit"></a><strong>unit</strong></td><td>xsd:int</td><td>
+<p></p>
+         This corresponds to the unitNumber field in 
+ <a href="vim.vm.device.VirtualDevice.html">VirtualDevice</a>.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

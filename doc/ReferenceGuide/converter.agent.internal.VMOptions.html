@@ -1,0 +1,147 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.agent.internal.VMOptions" name="converter.agent.internal.VMOptions"></a>
+<h1>Data Object - ConverterAgentInternalVMOptions</h1>
+<dl>
+<dt>Extended by</dt>
+<dd>
+<a href="converter.agent.internal.LocalVMOptions.html">ConverterAgentInternalLocalVMOptions</a>, <a href="converter.agent.internal.ManagedVMOptions.html">ConverterAgentInternalManagedVMOptions</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.agent.internal.TargetStorageLayout.html">ConverterAgentInternalTargetStorageLayout</a>, <a href="converter.params.BasicHardwareParams.html">ConverterBasicHardwareParams</a>, <a href="converter.params.NetworkParams.html">ConverterNetworkParams</a>, <a href="vim.vm.ConfigSpec.html">VirtualMachineConfigSpec</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         VMOptions defines options
+ for creating new VMs.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="basicHardwareParams" name="basicHardwareParams"></a><strong>basicHardwareParams</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.params.BasicHardwareParams.html">ConverterBasicHardwareParams</a></td><td>
+<p></p>
+         The basic hardware configuration of the target VM.
+ <p>
+ If not set, the target VM will have the hardware as
+ close as possible to the source system.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="config" name="config"></a><strong>config</strong></td><td><a href="vim.vm.ConfigSpec.html">VirtualMachineConfigSpec</a></td><td>
+<p></p>
+         Config specification for new VM.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="networkParams" name="networkParams"></a><strong>networkParams</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.params.NetworkParams.html">ConverterNetworkParams</a></td><td>
+<p></p>
+         Target network configuration information.
+ <p>
+ If not specified, the default storage cloning parameters
+ are used. 
+ <p>
+ The default is to have create the same number of NICs on
+ the target as there are NICs on the source and to maintain
+ the NIC mapping whenever possible.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="preserveDeviceBacking" name="preserveDeviceBacking"></a><strong>preserveDeviceBacking</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         Preserve device backing information of CDROM, Floppy, Serial Port, Parallel Port
+ from the source machine in the target machine.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="preserveIdentity" name="preserveIdentity"></a><strong>preserveIdentity</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         Preserve uuid.bios from the source machine in the target machine to keep the 
+ identity intact.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="targetStorageLayout" name="targetStorageLayout"></a><strong>targetStorageLayout</strong></td><td><a href="converter.agent.internal.TargetStorageLayout.html">ConverterAgentInternalTargetStorageLayout</a></td><td>
+<p></p>
+         TargetStorageLayout describes the storage layout of the new VM.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="vmName" name="vmName"></a><strong>vmName</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         Name for the new VM.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="vmxnetPresent" name="vmxnetPresent"></a><strong>vmxnetPresent</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+<br>
+</td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

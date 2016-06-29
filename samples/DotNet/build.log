@@ -1,0 +1,37 @@
+Microsoft (R) Build Engine Version 2.0.50727.5420
+[Microsoft .NET Framework, Version 2.0.50727.5477]
+Copyright (C) Microsoft Corporation 2005. All rights reserved.
+
+Build started 8/2/2014 10:26:35 AM.
+__________________________________________________
+Project "O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\ConverterSamples.sln" (Rebuild target(s)):
+
+Target ValidateSolutionConfiguration:
+    Building solution configuration "Debug|Any CPU".
+Target Rebuild:
+    Target SubmitWinP2VJob:Rebuild:
+        __________________________________________________
+        Project "O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\ConverterSamples.sln" is building "O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\SubmitWinP2VJob.csproj" (Rebuild target(s)):
+
+        Target CoreClean:
+            Creating directory "obj\".
+        Target PrepareForBuild:
+            Creating directory "bin\Debug\".
+            Creating directory "obj\Debug\".
+        Target CoreCompile:
+            C:\Windows\Microsoft.NET\Framework\v2.0.50727\Csc.exe /noconfig /nowarn:1701,1702 /errorreport:prompt /warn:4 /define:DEBUG;TRACE /reference:..\..\ConverterSDKStub.dll /reference:..\..\ConverterSDKStub.XmlSerializers.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Net.dll" /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Web.Services.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /debug+ /debug:full /optimize- /out:obj\Debug\ConverterSamples.exe /target:exe Common.cs ConverterConnection.cs Program.cs Properties\AssemblyInfo.cs
+        Target GenerateSerializationAssemblies:
+            C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\bin\sgen.exe /assembly:O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\obj\Debug\ConverterSamples.exe /proxytypes /reference:..\..\ConverterSDKStub.dll /reference:..\..\ConverterSDKStub.XmlSerializers.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Net.dll" /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Web.Services.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll /compiler:/delaysign- 
+        Target _CopyFilesMarkedCopyLocal:
+            Copying file from "..\..\ConverterSDKStub.dll" to "bin\Debug\ConverterSDKStub.dll".
+            Copying file from "..\..\ConverterSDKStub.XmlSerializers.dll" to "bin\Debug\ConverterSDKStub.XmlSerializers.dll".
+        Target CopyFilesToOutputDirectory:
+            Copying file from "obj\Debug\ConverterSamples.exe" to "bin\Debug\ConverterSamples.exe".
+            SubmitWinP2VJob -> O:\Projects\VMware_vCenter_Converter_Scheduled\samples\DotNet\cs\SubmitWinP2VJob\bin\Debug\ConverterSamples.exe
+            Copying file from "obj\Debug\ConverterSamples.pdb" to "bin\Debug\ConverterSamples.pdb".
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04

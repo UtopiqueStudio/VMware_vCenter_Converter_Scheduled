@@ -1,0 +1,182 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.agent.internal.ManagedVMOptions" name="converter.agent.internal.ManagedVMOptions"></a>
+<h1>Data Object - ConverterAgentInternalManagedVMOptions</h1>
+<dl>
+<dt>Extends</dt>
+<dd>
+<a href="converter.agent.internal.VMOptions.html">ConverterAgentInternalVMOptions</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.agent.internal.LoginCredentials.html">ConverterAgentInternalLoginCredentials</a>, <a href="vim.Datastore.html">Datastore</a>, <a href="vim.Folder.html">Folder</a>, <a href="vim.HostSystem.html">HostSystem</a>, <a href="vim.ResourcePool.html">ResourcePool</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         <a href="converter.agent.internal.ManagedVMOptions.html">ConverterAgentInternalManagedVMOptions</a> defines options for creating
+ a managed (ESX/VC) virtual machine.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="datastore" name="datastore"></a><strong>datastore</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.Datastore.html">Datastore</a></td><td>
+<p></p>
+         Datastore to store the new VM.
+ If not specified, the default datastore
+ associated with the resource pool is used.
+
+ VMX files are stored in this datastore - individual backing
+ stores may be specified using <a href="converter.agent.internal.ManagedVMOptions.html#datastoreLocations">datastoreLocations</a>
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="datastoreLocations" name="datastoreLocations"></a><strong>datastoreLocations</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference[]</a>
+<br> to a
+                  <a href="vim.Datastore.html">Datastore[]</a></td><td>
+<p></p>
+         DatastoreLocations for each disk in the new VM.
+ If not specified, the <a href="converter.agent.internal.ManagedVMOptions.html#datastore">datastore</a> is used for all disks in the new VM
+ If insufficient entries are specified, the last entry
+ will be used for all the rest.
+
+ VMX files are stored in <a href="converter.agent.internal.ManagedVMOptions.html#datastore">datastore</a> even when individual backing
+ stores are specified using <a href="converter.agent.internal.ManagedVMOptions.html#datastoreLocations">datastoreLocations</a>
+ 
+ When one or more of these locations are not accessible, all the disks will
+ be created on the <a href="converter.agent.internal.ManagedVMOptions.html#datastore">datastore</a>
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="doNotCreateUnspecifiedDevices" name="doNotCreateUnspecifiedDevices"></a><strong>doNotCreateUnspecifiedDevices</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         <code>ManagedVMCreatorImpl::PopulateConfig</code>
+ creates unspecified but necessary devices, by default.
+
+ <P>So, if corresponding devices are not specified in the <a href="vim.vm.ConfigSpec.html">VirtualMachineConfigSpec</a>, the ManagedVMCreator will create the following:
+ <ul>
+  <li>SCSI controller
+  <li><a href="vim.vm.device.VirtualCdrom.html">VirtualCdrom</a>
+  <li><a href="vim.vm.device.VirtualFloppy.html">VirtualFloppy</a>
+  <li><a href="vim.vm.device.VirtualPCNet32.html">VirtualPCNet32</a> (Ethernet card)
+ </ul>
+ The following devices seem to always be present in the default config, among
+ others.  They don't need to be created.  It is not clear whether duplicates will
+ need to be deleted.  However, the issue has not come up:
+ <ul>
+  <li>Primary IDE controller
+  <li>Secondary IDE controller
+ </ul>
+ 
+ <P>Set this optional flag in order to turn off that behavior.  We've made this
+ an option that has to be requested, rather than the default, so that tests and code
+ that depend on the old behavior won't start to fail.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="host" name="host"></a><strong>host</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.HostSystem.html">HostSystem</a></td><td>
+<p></p>
+         The target HostSystem on which the virtual machine will run. This must
+ specify a host that is a member of the ComputeResource indirectly
+ specified by the pool. For a stand-alone host or a cluster with DRS, host
+ can be omitted, and the system selects a default.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="login" name="login"></a><strong>login</strong></td><td><a href="converter.agent.internal.LoginCredentials.html">ConverterAgentInternalLoginCredentials</a></td><td>
+<p></p>
+         How to log into the destination.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="resourcePool" name="resourcePool"></a><strong>resourcePool</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.ResourcePool.html">ResourcePool</a></td><td>
+<p></p>
+         <a href="vim.ResourcePool.html">ResourcePool</a> to assign the new VM to.
+ If not specified, the default <a href="vim.ResourcePool.html">ResourcePool</a> associated
+ with the datacenter selected by vmFolder is used.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="vmFolder" name="vmFolder"></a><strong>vmFolder</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a>
+<br> to a
+                  <a href="vim.Folder.html">Folder</a></td><td>
+<p></p>
+         VirtualMachine Folder to create the new VM.
+ If not specified, the default VM folder is used.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="converter.agent.internal.VMOptions.html">ConverterAgentInternalVMOptions</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="converter.agent.internal.VMOptions.html#basicHardwareParams">basicHardwareParams</a>, <a href="converter.agent.internal.VMOptions.html#config">config</a>, <a href="converter.agent.internal.VMOptions.html#networkParams">networkParams</a>, <a href="converter.agent.internal.VMOptions.html#preserveDeviceBacking">preserveDeviceBacking</a>, <a href="converter.agent.internal.VMOptions.html#preserveIdentity">preserveIdentity</a>, <a href="converter.agent.internal.VMOptions.html#targetStorageLayout">targetStorageLayout</a>, <a href="converter.agent.internal.VMOptions.html#vmName">vmName</a>, <a href="converter.agent.internal.VMOptions.html#vmxnetPresent">vmxnetPresent</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

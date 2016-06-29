@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/tr/1999/REC-html401-19991224/loose.dtd">
+
+<html><head><title>Readme for VMWare vCenter Converter Standalone SDK .NET (DotNet) Samples</title>
+<!--
+21-Jun-2008; simplify even further. We won't have a landing page on www.vmware.com. Need to refer to Communities.
+-->
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="../docresources/template.css">
+</link>
+<style type="text/css">
+
+
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family:
+	"Courier New", Courier, monospace;
+	}
+
+.Console
+    {
+	font-size: 11px; font-family:
+	"Courier New", Courier, monospace;
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<table cellpadding="0" cellspacing="5" id="main-table">
+<tr><td id="main-body" align="left">
+<!-- ///*** start of content area ***/// -->
+<img src="../docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+
+<h1>Readme for C# (DotNet) Samples</h1>
+
+<p class="Nav">
+<img src="../docresources/page.gif" alt="Back to the main Readme" width="13" height="16" border="0"></img> &nbsp;<a href="SDK-README.html" title="Go back to the top-level Readme...">VMware vCenter Converter Standalone SDK Readme</a></br>
+<img src="../docresources/page.gif" alt="Java Samples Readme" width="13" height="16" border="0"></img> &nbsp;<a href="readme_java.htm" title="Go to the Readme for the Java samples...">Readme for Java samples</a></p>
+
+<hr/>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td vAlign="top" width="40%">
+
+<p>This document contains summary information about building and running the .NET samples provided with the VMware vCenter Converter Standalone SDK. </p>
+
+<ul>
+<li><a href="#buildsamplesvisualstudio2005">Building the Samples</a>
+  <ul>
+<li><a href="#buildsamplesvisualstudio2005">Building the Samples Using Visual Studio 2005</a></li>
+<li><a href="#buildsamplesvc2005express">Building the Samples Using Visual C# 2005 Express</a></li>
+</ul>
+</li>
+<li><a href="#runsamples">Running the Samples</a></li>
+<li><a href="#samplesdesc">Samples Listing</a></li>
+</ul>
+
+</td><td vAlign="top" align="right">
+
+<!--caveat about state of document -->
+<table cellpadding="5" cellspacing="0" width="450" border="0">
+<tr><td colspan="2" align="left"><span class="Exp">Note:&nbsp;&nbsp;</span> Information in this document may not be current. For up-to-date information, check these VMware Web sites:</td></tr>
+<tr><td colspan="2" align="left"><table cellpadding="5" cellspacing="0" width="100%" border="1" class="light-blue-shade">
+<tr><td vAlign="top" colspan="2" align="left"></td></tr>
+<tr class="Caps"><td vAlign="top" width="45%" class="Caption" align="left">Beta or Pre-release Products</td>
+
+<td vAlign="top"><a href="http://communities.vmware.com/community/beta">VMware Beta Community</a></td></tr>
+
+<tr class="Caps"><td class="Caption">Released SDK Products</td><td vAlign="top"><a href="http://www.vmware.com/support/pubs/sdk_pubs.html">VMware APIs and SDKs</a>
+</td></tr></table>
+</td></tr></table>
+<!--conclude caveat about state of links -->
+
+</td></tr>
+</table>
+
+
+
+<a name="buildsamplesvisualstudio2005"></a>
+<h2><strong>Building the Samples</strong></h2>
+<p>The  Converter Standalone SDK includes  one  .NET sample that converts  a physical machine to a virtual one. You can build C# (.NET) samples using Microsoft Visual Studio 2005 Express and Microsoft Visual Studio 2005. Visual Studio 2003 is not supported, due to a performance issue. See <a href="http://kb.vmware.com/kb/87402">Knowledge Base article 87402</a> for details.</p>
+<p> If there is no Converter Standalone agent  installed   on the physical machine you want to convert, the sample automatically attempts to install it. </p>
+<h3>Prerequisites</h3>
+<ul>
+  The target virtual machine must not exist on the vCenter Server  you are logged in.
+</ul>
+<h3>Building  the Sample Using Visual Studio 2005</h3>
+<p> You can build C# (.NET) samples using Microsoft Visual Studio 2005. </p>
+<p><strong>To build the .NET sample using Visual Studio 2005 </strong></p>
+<ul>
+
+<li> From the Windows Start Menu, open a Visual Studio .NET console window:
+  <ul>
+<li>Select <code>Start Menu &#150;&gt; All Programs &#150;&gt; Visual Studio .NET &#150;&gt; Visual Studio .NET Tools &#150;&gt; Visual Studio .NET Command Prompt</code></li>
+</ul>
+</li>
+<li>
+Navigate to the <code>SDK\samples\DotNet</code> sub-directory.</li>
+<li>In the console window, enter <code>Build2005.cmd</code> to build the sample.</li>
+</ul>
+
+<a name="buildsamplesvc2005express"></a>
+<h3>Building the Sample Using Visual Studio 2005 Express</h3>
+<p> The default installation directory of Visual C# Express is  <code>c:\Program Files\Microsoft Visual Studio 8</code>. If you have installed Microsoft Visual C# 2005 Express on a different location, you need to create and configure the <code>VSINSTALLDIR</code> system environment variable.</p>
+<p><strong>To configure the <code>VSINSTALLDIR</code> system environment variable</strong></p>
+<ul>
+  <li>Create the <code>VSINSTALLDIR</code> system environment variable.</li>
+  <li>Configure the <code>VSINSTALLDIR</code> environment variable with the locations of the Microsoft Visual Studio tools and .NET Framework 2.0. Microsoft Visual Studio tools and .NET Framework 2.0 are located in the <code>Common7</code> and <code>SDK</code> sub-directories of the Microsoft Visual C# 2005 Express installation directory.  Use quotation marks around directory names that have spaces in them. For example:</br>
+  <code>&quot;C:\apps\Microsoft Visual Studio 8&quot;</code>.</li>
+  </ul>
+<p><strong>To build the samples using the Visual Studio 2005 Express</strong></p>
+<ul>
+
+<li> From the Windows Start Menu, open a Visual Studio .NET console window:
+  <ul>
+<li>Select <code>Start Menu &#150;&gt; All Programs &#150;&gt; Visual Studio .NET &#150;&gt; Visual Studio .NET Tools &#150;&gt; Visual Studio .NET Command Prompt</code></li>
+</ul>
+</li>
+<li>
+Navigate to the <code>SDK\samples\DotNet</code> sub-directory.</li>
+<li>In the console window, enter <code>Build2005.cmd</code> to run the file.</li>
+</ul>
+
+<a name="runsamples"></a>
+<h2><strong>Running the Samples</strong></h2>
+<p>You can run samples from  the <strong>\bin</strong> or <strong>\debug</strong> directory of a project or using the Visual Studio .NET console. In the console, you can invoke help about an application by running the application without specifying its parameters. </p>
+<p><strong>To run a sample using  Visual Studio .NET</strong></p>
+<ul><li>Open  the <code>ConverterSamples.sln</code> file in Visual Studio .NET.</li>
+<li>From the <strong>Project</strong> menu, select <strong>Properties</strong>. The <strong>Property Pages</strong> dialog opens.</li>
+<li>In the <strong>Property Pages</strong>  dialog, select <strong>Configuration Properties</strong>. </li>
+<li>In the left-hand pane, select <strong>Debugging</strong>.</li>
+<li>In the right-hand pane,  select <strong>Command Line Arguments</strong>.</li>
+<li>Click <strong>OK</strong> to save your changes.</li>
+
+<li>Run the sample in the command prompt.</li>
+</ul>
+
+<a name="samplesdesc"></a>
+<h2><strong>Sample Applications</strong></h2>
+
+
+<table width="100%"  border="1" cellpadding="10" cellspacing="0">
+
+
+<tr><td class="TableHead" vAlign="top">
+Sample</td><td class="TableHead">Description, command-line syntax, and example...</td></tr>
+
+<tr>
+  <td vAlign="top">
+<strong>SubmitWinP2VJob</strong></td>
+  <td vAlign="top">Converts a Windows physical machine into a virtual machine.
+    The sample takes a properties file as an input. A sample properties file is provided along with the sample (<code>submitwinp2vjob.properties</code>). The properties file contains information about the physical source,  vCenter Server,  Converter Standalone server details, and the conversion job.<BR>
+    <p><strong>Command line syntax:</strong></br>
+  <span class="Code">ConverterSamples &lt;propertiesfile&gt;
+  <propertiesfile>
+</span></p>
+
+<p><strong>Examples:</strong></br>
+  <span class="Code">ConverterSamples submitwinp2vjob.properties</span></p></td></tr></table>
+
+
+
+
+	 <a name="resources"></a><h2><strong>VMware Resources</strong></h2>
+
+	    <ul>
+		<li><a href="http://www.vmware.com/communities/content/developer/">Developer Center</a></li>
+          <li><a href="http://kb.vmware.com/">Knowledge Base</a></li>
+        <li><a href="http://www.vmware.com/communities/content/vmug/index.html">User Groups</a> </li>
+        <li><a href="http://communities.vmware.com">VMware Communities</a> </li>
+ 	    <li><a href="http://communities.vmware.com/community/developer/">VMware Developer Community</a></li>
+	 </ul>
+<p>
+Copyright © 1998-2013 VMware, Inc. All rights reserved. This product is protected by copyright and intellectual property laws in the United States and other countries as well as by international treaties. VMware products are covered by one or more patents listed at <a href="http://www.vmware.com/go/patents">http://www.vmware.com/go/patents</a>.
+</p>
+
+
+</td>
+</tr></table>
+
+
+
+
+</body></html>

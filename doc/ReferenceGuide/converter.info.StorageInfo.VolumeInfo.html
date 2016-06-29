@@ -1,0 +1,219 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.info.StorageInfo.VolumeInfo" name="converter.info.StorageInfo.VolumeInfo"></a>
+<h1>Data Object - ConverterStorageInfoVolumeInfo</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.info.StorageInfo.html#field_detail">ConverterStorageInfo</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="vmodl.DynamicData.html">DynamicData</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.info.StorageInfo.VolumeInfo.ExtfsFeatures.html">ConverterStorageInfoVolumeInfoExtfsFeatures</a>
+</dd>
+<p></p>
+</dl>
+<H2>Data Object 
+                  Description</H2>
+<p></p>
+         Volume information.
+ <p>
+ Note that the OS-specific volume information, such as
+ volume mount points is a part of 
+ <a href="converter.info.ComputerOsInfo.LogicalVolumeInfo.html">ConverterComputerOsInfoLogicalVolumeInfo</a> and
+ can obtained by calling <a href="converter.QueryManager.html#queryOsInfo">ConverterQueryOsInfo</a>.
+      <p></p>
+<a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="active" name="active"></a><strong>active</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         True, for a volume on an active partition.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="capacityInBytes" name="capacityInBytes"></a><strong>capacityInBytes</strong></td><td>xsd:long</td><td>
+<p></p>
+         Volume capacity in bytes.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="clusterSizeInBytes" name="clusterSizeInBytes"></a><strong>clusterSizeInBytes</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:long</td><td>
+<p></p>
+         File system cluster size in bytes.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="diskId" name="diskId"></a><strong>diskId</strong></td><td>xsd:string[]</td><td>
+<p></p>
+         The disk id(s) of the disk(s) on which this 
+ volume resides.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="extfsFeatures" name="extfsFeatures"></a><strong>extfsFeatures</strong><span title="Need not be set" class="footnote-ref">*</span></td><td><a href="converter.info.StorageInfo.VolumeInfo.ExtfsFeatures.html">ConverterStorageInfoVolumeInfoExtfsFeatures</a></td><td>
+<p></p>
+         Information about ext2/ext3/ext4 filesystem features specified during mkfs
+ on the volume.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="fileSystem" name="fileSystem"></a><strong>fileSystem</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         The filesystem type, if the server
+ was able to determine it.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="firstClusterOffsetInBytes" name="firstClusterOffsetInBytes"></a><strong>firstClusterOffsetInBytes</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:long</td><td>
+<p></p>
+         Offset in bytes of the first file system cluster within the volume.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="label" name="label"></a><strong>label</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         Volume label.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="lvName" name="lvName"></a><strong>lvName</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         In case this is a LVM logical volume, this property holds the LVM volume name.
+      <p></p>
+<B><I>Since </I></B>Converter API 3.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="partitionGuid" name="partitionGuid"></a><strong>partitionGuid</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+         For GPT partitions the type is GUID+UUID
+ If present then the disk must be in GPT format.
+      <p></p>
+<B><I>Since </I></B>Converter API 4.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="partitionNumber" name="partitionNumber"></a><strong>partitionNumber</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:int</td><td>
+<p></p>
+         1-based volume partition number.
+ Not defined for Linux LVM and Windows dynamic volumes.
+ 
+ For a Linux P2V sources the partition number has 1-4 for primary partitions
+ and 5+ for partitions of logical volumes. For Windows P2V and VMI sources
+ the partition numbers are sequential and cannot be used to determine
+ if a partition is primary or not.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="partitionType" name="partitionType"></a><strong>partitionType</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:byte</td><td>
+<p></p>
+         MBR partition type identifier specified in the partition table
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="partitionUuid" name="partitionUuid"></a><strong>partitionUuid</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:string</td><td>
+<p></p>
+<p></p>
+<B><I>Since </I></B>Converter API 4.0<br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="primary" name="primary"></a><strong>primary</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:boolean</td><td>
+<p></p>
+         True if volume resides on a primary partition, false otherwise.
+ Not defined for Linux P2V sources.
+ The default value is false.
+      <p></p>
+<B><I>Since </I></B>Converter API 2.0<br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="spaceUsedInBytes" name="spaceUsedInBytes"></a><strong>spaceUsedInBytes</strong></td><td>xsd:long</td><td>
+<p></p>
+         The amount of space used by files and filesystem
+ structures on the volume.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="volumeId" name="volumeId"></a><strong>volumeId</strong></td><td>xsd:string</td><td>
+<p></p>
+         Unique volume identifier.
+ <p>
+ It is unique for a given computer and is guaranteed to persist 
+ between multiple calls to 
+ <a href="converter.QueryManager.html#queryComputerInfo">ConverterQueryComputerInfo</a>.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td colspan="3">
+						Properties inherited from <a href="vmodl.DynamicData.html">DynamicData</a></td>
+</tr>
+<tr class="r0">
+<td colspan="3"><a href="vmodl.DynamicData.html#dynamicProperty">dynamicProperty</a>, <a href="vmodl.DynamicData.html#dynamicType">dynamicType</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set</span>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<html xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:vim2="urn:vim2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="./commonRes.js" language="JavaScript"> type="text/javascript"></script>
+<link href="doc-style.css" type="text/css" rel="StyleSheet">
+</head>
+<script src="dynamic-content.js" type="text/javascript"></script>
+<body>
+<table cellspacing="0" class="header-footer" id="top">
+<tr>
+<td>
+<br>
+</td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<a id="converter.server.job.Job" name="converter.server.job.Job"></a>
+<h1>Managed Object -  
+						ConverterServerJobJob</h1>
+<dl>
+<dt>Property of</dt>
+<dd>
+<a href="converter.event.Event.html#field_detail">ConverterEvent</a>, <a href="converter.event.EventFilterSpec.html#field_detail">ConverterEventFilterSpec</a>, <a href="converter.fault.JobFault.html#field_detail">ConverterJobFault</a>, <a href="converter.task.TaskFilterSpec.html#field_detail">ConverterTaskFilterSpec</a>, <a href="converter.task.TaskInfo.html#field_detail">ConverterTaskInfo</a>
+</dd>
+<dt>Parameter to</dt>
+<dd>
+<a href="converter.server.ServerDiagnosticManager.html#generateJobLogBundle">ConverterGenerateJobLogBundle</a>
+</dd>
+<dt>Extended by</dt>
+<dd>
+<a href="converter.server.conversion.ConversionJob.html">ConverterServerConversionConversionJob</a>, <a href="converter.server.protection.ProtectionJob.html">ConverterServerProtectionProtectionJob</a>
+</dd>
+<dt>Extends</dt>
+<dd>
+<a href="converter.server.ManagedEntity.html">ConverterManagedEntity</a>
+</dd>
+<dt>See also</dt>
+<dd>
+<a href="converter.server.job.JobInfo.html">ConverterServerJobJobInfo</a>, <a href="converter.server.job.Job.JobUpdateSpec.html">ConverterServerJobJobJobUpdateSpec</a>, <a href="converter.server.job.JobSpec.html">ConverterServerJobJobSpec</a>
+</dd>
+<dt>Since </dt>
+<dd>Converter API 2.0</dd>
+<p></p>
+</dl>
+<br>
+<h2>Managed Object Description</h2>
+<p></p>
+         Interface interacting with Jobs.  Can be extended for more specific job types.
+      <a id="field_detail" name="field_detail"></a>
+<p class="table-title">Properties</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Name
+	        </th><th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="extraInfo" name="extraInfo"></a><strong>extraInfo</strong><span title="May not be present" class="footnote-ref">*</span></td><td>xsd:anyType</td><td>
+<p></p>
+         Property for extra information associated with this managed object.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><a id="info" name="info"></a><strong>info</strong></td><td><a href="converter.server.job.JobInfo.html">ConverterServerJobJobInfo</a></td><td>
+<p></p>
+         Gets the dynamic job information for the job.
+      <br>
+</td>
+</tr>
+<tr class="r1">
+<td nowrap="1"><a id="spec" name="spec"></a><strong>spec</strong></td><td><a href="converter.server.job.JobSpec.html">ConverterServerJobJobSpec</a></td><td>
+<p></p>
+         Get the job specification for this job.
+      <br>
+</td>
+</tr>
+<tr class="r0">
+<td colspan="3">
+						Properties inherited from <a href="converter.server.ManagedEntity.html">ConverterManagedEntity</a></td>
+</tr>
+<tr class="r1">
+<td colspan="3"><a href="converter.server.ManagedEntity.html#name">name</a>, <a href="converter.server.ManagedEntity.html#overallStatus">overallStatus</a></td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">May not be present</span>
+<br>
+<a id="method_detail" name="method_detail"></a>
+<p class="table-title">Methods</p>
+<table cellspacing="0">
+<tr class="r1">
+<th>
+				          Methods defined in this Managed Object
+				        </th>
+</tr>
+<tr class="r0">
+<td><a href="#resume">ConverterServerJobResume</a>, <a href="#stop">ConverterServerJobStop</a>, <a href="#suspend">ConverterServerJobSuspend</a>, <a href="#updateExtraInfo">ConverterServerJobUpdateExtaInfo</a>, <a href="#updateJobSpec">ConverterServerJobUpdateSpec</a></td>
+</tr>
+<tr class="r1">
+<td>
+            Methods inherited from <a href="converter.server.ManagedEntity.html">ConverterManagedEntity</a></td>
+</tr>
+<tr class="r0">
+<td><a href="converter.server.ManagedEntity.html#rename">ConverterServerManagedEntityRename</a></td>
+</tr>
+</table>
+<br>
+<a id="resume" name="resume"></a>
+<h1>ConverterServerJobResume</h1>
+<p></p>
+         Unsuspend the job so that it can continue running its scheduled operations.
+ <p>
+ In standalone mode this operation can be initiated by the user that
+ created the job or by Administrator.
+ <p>
+ In VC-integrated mode this operation can be initiated by the user that
+ created the job or by any user who has Task.Update privilege on the inventory root.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+						used to make the method call.
+					</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is not authorized for this operation.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="stop" name="stop"></a>
+<h1>ConverterServerJobStop</h1>
+<p></p>
+         Permenantly stops this job.
+
+ This managed object will cease to exist, any runtime resources consumed by this job
+ are freed, corresponding scheduler items are removed from the internal
+ scheduler, and (if requested) any active tasks are notified to cancel and are
+ destroyed. Only the job data stored in the database will remain and is
+ accessible through the ConversionJobHistoryCollector interface.
+ To remove the database rows associated with this job call ConversionManager#destroyJob.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+<dt>Since </dt>
+<dd>Converter API 3.0</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>activeTaskHandling</strong></td><td>xsd:string</td><td>
+<p></p>
+         Describes how to handle active tasks.  Must be stringized
+                           representation of a value from the <a href="converter.server.job.Job.ActiveTaskHandling.html">ConverterServerJobJobActiveTaskHandling</a> enumeration.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.JobDeactivationFault.html">ConverterJobDeactivationFault</a></td><td>Thrown if there is a general error deactivating the given job. Check to see if the faultCause property is set for more detailed information.</td>
+</tr>
+<tr class="r0">
+<td><a href="converter.fault.JobHasActiveTaskFault.html">ConverterJobHasActiveTaskFault</a></td><td>Thrown if the "activeTaskHandling" is set to "failIfActiveTask" and the job was found to have an active task at the time of suspend.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td></td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="suspend" name="suspend"></a>
+<h1>ConverterServerJobSuspend</h1>
+<p></p>
+         Atomically suspend the job, updating the internal scheduler. If
+ cancelActiveTask is set then any active task will be canceled (though may not
+ be completed running when this returns). Otherwise if failActiveTask is set
+ then this method will throw an exception (to be defined) if and only if there
+ is an active task running when this is suspended.
+ <p>
+ In standalone mode this operation can be initiated by the user that
+ created the job or by Administrator.
+ <p>
+ In VC-integrated mode this operation can be initiated by the user that
+ created the job or by any user who has Task.Update privilege on the inventory root.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>activeTaskHandling</strong></td><td>xsd:string</td><td>
+<p></p>
+         Describes how to handle active tasks.  Must be a
+ stringized representation of a value from the Job.ActiveTaskHandling
+ enumeration.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.JobHasActiveTaskFault.html">ConverterJobHasActiveTaskFault</a></td><td>Throw if the "activeTaskHandling" is set to "failIfActiveTask" and the job was found to have an active task at the time of suspend.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidState.html">InvalidState</a></td><td>Thrown if the job is already in the suspended state.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is not authorized for this operation.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="updateExtraInfo" name="updateExtraInfo"></a>
+<h1>ConverterServerJobUpdateExtaInfo</h1>
+<p></p>
+         Replace the extra information associated with this Job managed object.
+ <p>
+ In standalone mode this operation can be initiated by the user that
+ created the job or by Administrator.
+ <p>
+ In VC-integrated mode this operation can be initiated by the user that
+ created the job or by any user who has Task.Update privilege on the inventory root.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>replacementInfo</strong><span title="Need not be set" class="footnote-ref">*</span></td><td>xsd:anyType</td><td>
+<p></p>
+         Information with which to replace the "extraInfo" property
+                        in this Job managed object.  If not set then this will clear
+                        the value of "extraInfo".
+      <br>
+</td>
+</tr>
+</table>
+<span class="footnote-ref">*</span><span class="footnote">Need not be set </span>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td>xsd:anyType</td><td>The old extraInfo property before replacment.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is not authorized for this operation.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<a id="updateJobSpec" name="updateJobSpec"></a>
+<h1>ConverterServerJobUpdateSpec</h1>
+<p></p>
+         Update several job parameters in one call.
+ <p>
+ Adds the ability to update the first run time, including to run as soon as
+ possible.  It is an error to update the first run time if the job has already
+ started its initial run.
+ <p>
+ In standalone mode this operation can be initiated by the user that
+ created the job or by Administrator.
+ <p>
+ In VC-integrated mode this operation can be initiated by the user that
+ created the job or by any user who has Task.Update privilege on the inventory root.
+      <dl>
+<dt>Required Privileges</dt>
+<dd>None</dd>
+</dl>
+<p class="table-title">
+		Parameters
+		</p>
+<table cellspacing="0">
+<tr>
+<th>Name</th><th>Type</th><th>Description</th>
+</tr>
+<tr class="r1">
+<td><strong>_this</strong></td><td><a href="vmodl.ManagedObjectReference.html">ManagedObjectReference</a></td><td>
+					A reference to the 
+						<a href="converter.server.job.Job.html">ConverterServerJobJob</a>
+						used to make the method call.
+					</td>
+</tr>
+<tr class="r0">
+<td nowrap="1"><strong>updateParams</strong></td><td><a href="converter.server.job.Job.JobUpdateSpec.html">ConverterServerJobJobJobUpdateSpec</a></td><td>
+<p></p>
+         Parameters to use for updating a job's specification.
+      <br>
+</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+		Return Value
+		</p>
+<table cellspacing="0">
+<tr>
+<th>
+	          Type
+	        </th><th>
+	          Description
+	        </th>
+</tr>
+<tr>
+<td><a href="converter.server.job.JobSpec.html">ConverterServerJobJobSpec</a></td><td>The old job spec before update.</td>
+</tr>
+</table>
+<br>
+<p class="table-title">
+         Faults
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th><th>
+               Description
+            </th>
+</tr>
+<tr class="r1">
+<td><a href="converter.fault.FirstRunAlreadyStartedFault.html">ConverterFirstRunAlreadyStartedFault</a></td><td>A new first runtime is requested, but the job has previously started its first run.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.DuplicateName.html">DuplicateName</a></td><td>The new name already exists in the current folder.</td>
+</tr>
+<tr class="r1">
+<td><a href="vmodl.fault.InvalidArgument.html">InvalidArgument</a></td><td>The parameters are invalid.</td>
+</tr>
+<tr class="r0">
+<td><a href="vim.fault.InvalidName.html">InvalidName</a></td><td>The new name is not valid.</td>
+</tr>
+<tr class="r1">
+<td><a href="vim.fault.NoPermission.html">NoPermission</a></td><td>Thrown if the user is not authorized for this operation.</td>
+</tr>
+<tr class="r0">
+<td><a href="vmodl.RuntimeFault.html">RuntimeFault</a></td><td>Thrown if any type of runtime fault is thrown that is not covered by the other faults; for example, a communication error.</td>
+</tr>
+</table>
+<p class="table-title">
+         Events
+      </p>
+<table cellspacing="0">
+<tr>
+<th>
+               Type
+            </th>
+</tr>
+<tr class="r1">
+<td colspan="2">None</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<table cellspacing="0" class="header-footer" id="bottom">
+<tr>
+<td><a href="#top">Top of page</a></td><td></td><td><a href="#field_detail">Local Properties</a></td><td><a href="#method_detail">Local Methods</a></td>
+</tr>
+<tr>
+<td><a href="index-mo_types.html">Managed Object Types</a></td><td><a href="index-do_types.html">Data Object Types</a></td><td><a href="index-properties.html">All Properties</a></td><td><a href="index-methods.html">All Methods</a></td>
+</tr>
+</table>
+<br>
+<script language="javascript">document.write(ID_Copyright);</script>
+<br>
+<script language="javascript">document.write(ID_VersionInformation);</script>
+</body>
+</html>
